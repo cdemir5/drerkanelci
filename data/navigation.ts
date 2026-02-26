@@ -1,0 +1,120 @@
+export interface NavItem {
+  label: string;
+  href: string;
+  children?: NavItem[];
+}
+
+export const navigation: NavItem[] = [
+  { label: "Anasayfa", href: "/" },
+  { label: "Hakkımda", href: "/hakkimda" },
+  {
+    label: "Miyom",
+    href: "/miyom",
+    children: [
+      { label: "Miyom Nedir", href: "/miyom/miyom-nedir" },
+      { label: "İzsiz Miyom Ameliyatı", href: "/miyom/izsiz-miyom-ameliyati" },
+      { label: "Vajinal Miyom Ameliyatı", href: "/miyom/vajinal-miyom-ameliyati" },
+      { label: "Kesik ve Dikiş İzi Olmadan Miyom Ameliyatı", href: "/miyom/dikissiz-miyom-ameliyati" },
+      { label: "Vnotes ile Miyom Ameliyatı", href: "/miyom/vnotes-miyom-ameliyati" },
+      { label: "Rahim Koruyucu Miyom Ameliyatı", href: "/miyom/rahim-koruyucu-miyom-ameliyati" },
+      { label: "Rahim Alınmadan Miyom Ameliyatı", href: "/miyom/rahim-alinmadan-miyom-ameliyati" },
+      { label: "Kapalı Miyom Ameliyatı", href: "/miyom/kapali-miyom-ameliyati" },
+      { label: "Rahim Çıkartmadan Miyom Ameliyatı", href: "/miyom/rahim-cikartmadan-miyom-ameliyati" },
+      { label: "Miyom Sıkça Sorulan Sorular", href: "/miyom/sikca-sorulan-sorular" },
+    ],
+  },
+  {
+    label: "Kadın Kanserleri",
+    href: "/jinekolojik-onkoloji",
+    children: [
+      { label: "Rahim Ağzı (Serviks) Kanseri", href: "/jinekolojik-onkoloji/rahim-agzi-kanseri" },
+      { label: "Rahim Kanseri Tanı ve Tedavisi", href: "/jinekolojik-onkoloji/rahim-kanseri" },
+      { label: "HPV Aşılaması", href: "/jinekolojik-onkoloji/hpv-asilamasi" },
+      { label: "HIPEC (Sıcak Kemoterapi)", href: "/jinekolojik-onkoloji/hipec" },
+      { label: "Metastatik Jinekolojik Kanser", href: "/jinekolojik-onkoloji/metastatik-kanser" },
+      { label: "Trofoblastik Tümörler", href: "/jinekolojik-onkoloji/trofoblastik-tumorler" },
+      { label: "Periton Kanseri Tedavisi", href: "/jinekolojik-onkoloji/periton-kanseri" },
+      { label: "Tüp Kanseri Tedavisi", href: "/jinekolojik-onkoloji/tup-kanseri" },
+      { label: "Vajina Kanseri Tedavisi", href: "/jinekolojik-onkoloji/vajina-kanseri" },
+      { label: "Nüks Kanserlerin Tedavisi", href: "/jinekolojik-onkoloji/nuks-kanser" },
+      { label: "Rahim Sarkomu Tedavisi", href: "/jinekolojik-onkoloji/rahim-sarkomu" },
+      { label: "Yumurtalık Kanseri Tedavisi", href: "/jinekolojik-onkoloji/yumurtalik-kanseri" },
+      { label: "Meme Kanseri Taraması", href: "/jinekolojik-onkoloji/meme-kanseri-taramasi" },
+      { label: "Vulva Kanseri Tedavisi", href: "/jinekolojik-onkoloji/vulva-kanseri" },
+    ],
+  },
+  {
+    label: "Genital Estetik",
+    href: "/genital-estetik",
+    children: [
+      { label: "Labioplasti Nedir?", href: "/genital-estetik/labioplasti" },
+      { label: "Genital Estetik ve Labioplasti", href: "/genital-estetik/genital-estetik-labioplasti" },
+      { label: "Doğal Kadın Genital Estetiği", href: "/genital-estetik/dogal-genital-estetik" },
+      { label: "Revizyon Kadın Genital Estetiği", href: "/genital-estetik/revizyon-genital-estetik" },
+      { label: "Vajinal Daraltma (Vajinoplasti)", href: "/genital-estetik/vajinal-daraltma" },
+      { label: "Klitoris Estetiği", href: "/genital-estetik/klitoris-estetigi" },
+      { label: "Monsplasti (Venüs Tepesi Estetiği)", href: "/genital-estetik/monsplasti" },
+      { label: "Perinoplasti Nedir?", href: "/genital-estetik/perinoplasti" },
+      { label: "Kök Hücre ve Eksosom Tedavisi", href: "/genital-estetik/kok-hucre-eksosom" },
+      { label: "PRP ve Mezoterapi", href: "/genital-estetik/prp-mezoterapi" },
+      { label: "Orgazm Aşısı Nedir?", href: "/genital-estetik/orgazm-asisi" },
+      { label: "Barbieplasti Nedir?", href: "/genital-estetik/barbieplasti" },
+      { label: "Barbie Genital Estetik", href: "/genital-estetik/barbie-genital-estetik" },
+      { label: "Barbie Vajina Estetiği", href: "/genital-estetik/barbie-vajina-estetigi" },
+      { label: "Yağ İnjeksiyonu", href: "/genital-estetik/yag-injeksiyonu" },
+    ],
+  },
+  {
+    label: "HPV / Kolposkopi",
+    href: "/hpv-kolposkopi",
+    children: [
+      { label: "HPV Nedir?", href: "/hpv-kolposkopi/hpv-nedir" },
+      { label: "HPV İlişkili Hastalıklar", href: "/hpv-kolposkopi/hpv-iliskili-hastaliklar" },
+      { label: "CIN1, CIN2, CIN3 Nedir?", href: "/hpv-kolposkopi/cin-siniflandirmasi" },
+      { label: "HSIL Nedir ve Nasıl Tedavi Edilir?", href: "/hpv-kolposkopi/hsil" },
+      { label: "LSIL Nedir?", href: "/hpv-kolposkopi/lsil" },
+      { label: "ASC-H Nedir ve Nasıl Tedavi Edilir?", href: "/hpv-kolposkopi/asc-h" },
+      { label: "ASCUS Nedir ve Nasıl Tedavi Edilir?", href: "/hpv-kolposkopi/ascus" },
+      { label: "PAP Smear ve HPV", href: "/hpv-kolposkopi/pap-smear" },
+      { label: "HPV Aşılaması", href: "/hpv-kolposkopi/hpv-asilamasi" },
+      { label: "HPV ve Genital Siğil", href: "/hpv-kolposkopi/genital-sigil" },
+      { label: "Genital Siğil Tedavisi", href: "/hpv-kolposkopi/genital-sigil-tedavisi" },
+      { label: "HPV Tedavisinde Bitkisel Tedaviler", href: "/hpv-kolposkopi/bitkisel-tedaviler" },
+      { label: "Gebelerde Genital Siğil Tedavisi", href: "/hpv-kolposkopi/gebelerde-genital-sigil" },
+      { label: "CIN Tedavisinde Lazer", href: "/hpv-kolposkopi/cin-lazer-tedavisi" },
+      { label: "LEEP Ameliyatı Nedir?", href: "/hpv-kolposkopi/leep-ameliyati" },
+      { label: "Konizasyon Nedir?", href: "/hpv-kolposkopi/konizasyon" },
+      { label: "Kolposkopi Nedir?", href: "/hpv-kolposkopi/kolposkopi-nedir" },
+    ],
+  },
+  {
+    label: "Endometriozis",
+    href: "/endometriozis",
+    children: [
+      { label: "Endometriozis ve Çikolata Kisti", href: "/endometriozis/cikolata-kisti" },
+      { label: "Endometriozis Belirtileri ve Tedavi", href: "/endometriozis/belirtileri-tedavi" },
+      { label: "Endometriozis ile Baş Etme", href: "/endometriozis/bas-etme-yollari" },
+    ],
+  },
+  {
+    label: "Daha",
+    href: "#",
+    children: [
+      { label: "Histeroskopik Cerrahi", href: "/histeroskopik-cerrahi" },
+      { label: "Gebelik ve Doğum", href: "/gebelik-dogum" },
+      { label: "İnfertilite", href: "/kisirlik-tedavisi" },
+      { label: "Jinekoloji", href: "/jinekoloji" },
+      { label: "Ürojinekoloji", href: "/urojinekoloji" },
+      { label: "Vnotes", href: "/vnotes" },
+    ],
+  },
+  { label: "Videolar", href: "/videolar" },
+  { label: "İletişim", href: "/iletisim" },
+];
+
+export const additionalPages = [
+  { label: "Robotik Cerrahi", href: "/robotik-cerrahi" },
+  { label: "Kısırlık Tedavisi", href: "/kisirlik-tedavisi" },
+  { label: "Yüksek Riskli Gebelikler", href: "/yuksek-riskli-gebelikler" },
+  { label: "İleri Laparoskopik Cerrahi", href: "/ileri-laparoskopik-cerrahi" },
+];
