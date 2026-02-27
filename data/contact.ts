@@ -3,7 +3,7 @@ export const contactInfo = {
   title: "Kadın Hastalıkları ve Doğum Uzmanı",
   phone: "+90 530 403 69 77",
   phoneClean: "905304036977",
-  email: "info@drerkanelci.com.tr",
+  email: "info@drerkanelci.com",
   address: "Ataköy 2-5-6. Kısım, No:59 A Blok 1. Kat, 34250 Bakırköy/İstanbul",
   city: "İstanbul",
   mapLink: "https://maps.app.goo.gl/hWwVXViSQoAhffBR6?g_st=iwb",
