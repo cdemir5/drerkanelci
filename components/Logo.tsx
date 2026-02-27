@@ -8,7 +8,7 @@ export default function Logo({
   size?: "default" | "small" | "large";
 }) {
   const dimensions = {
-    small: { w: 140, h: 140 },
+    small: { w: 90, h: 90 },
     default: { w: 220, h: 220 },
     large: { w: 300, h: 300 },
   };
