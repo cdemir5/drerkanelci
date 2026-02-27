@@ -55,24 +55,39 @@ export default function IletisimPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Contact Info */}
             <div className="space-y-6">
-              {/* Address */}
-              <div className="bg-white rounded-2xl shadow-lg border p-6">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center flex-shrink-0">
-                    <FiMapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-dark mb-1">Adres</h3>
-                    <p className="text-sm text-gray-600">
-                      {contactInfo.address}
-                    </p>
-                    <p className="text-sm text-gray-600">{contactInfo.city}</p>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {contactInfo.hospital}
-                    </p>
+              {/* Address with Map */}
+              <a
+                href={contactInfo.mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-shadow group"
+              >
+                <div className="h-[200px] relative">
+                  <iframe
+                    src={contactInfo.mapEmbed}
+                    width="100%"
+                    height="100%"
+                    className="border-0 pointer-events-none"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Konum Haritası"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 text-white text-sm font-medium bg-primary px-3 py-1.5 rounded-lg transition-opacity">
+                      Google Maps&apos;te Aç
+                    </span>
                   </div>
                 </div>
-              </div>
+                <div className="p-4">
+                  <div className="flex gap-3">
+                    <FiMapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm text-gray-600">{contactInfo.address}</p>
+                      <p className="text-xs text-gray-500 mt-1">{contactInfo.hospital}</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
 
               {/* Phone */}
               <div className="bg-white rounded-2xl shadow-lg border p-6">
@@ -272,19 +287,6 @@ export default function IletisimPage() {
                 )}
               </div>
 
-              {/* Map */}
-              <div className="mt-8 rounded-2xl overflow-hidden shadow-lg border h-[400px]">
-                <iframe
-                  src={contactInfo.mapEmbed}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Konum Haritası"
-                />
-              </div>
             </div>
           </div>
         </div>

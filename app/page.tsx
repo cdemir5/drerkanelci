@@ -4,10 +4,16 @@ import ServiceCards from "@/components/ServiceCards";
 import AboutPreview from "@/components/AboutPreview";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
+import VideoPreview from "@/components/VideoPreview";
 import FAQ from "@/components/FAQ";
 import ContactCTA from "@/components/ContactCTA";
+import { fetchGoogleReviews } from "@/lib/google-reviews";
 
-export default function Home() {
+export const revalidate = 86400; // 24 saat
+
+export default async function Home() {
+  const googleData = await fetchGoogleReviews();
+
   return (
     <>
       <HeroSection />
@@ -15,7 +21,8 @@ export default function Home() {
       <ServiceCards />
       <AboutPreview />
       <WhyChooseUs />
-      <Testimonials />
+      <VideoPreview />
+      <Testimonials googleData={googleData} />
       <FAQ />
       <ContactCTA />
     </>

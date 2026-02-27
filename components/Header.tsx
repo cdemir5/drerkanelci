@@ -34,16 +34,8 @@ export default function Header() {
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/">
           <Logo size="default" />
-          <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-bold text-primary leading-tight">
-              Doç. Dr. Erkan Elçi
-            </span>
-            <span className="text-xs text-gray-500">
-              Kadın Hastalıkları ve Doğum Uzmanı
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}

@@ -43,7 +43,7 @@ const specialties = [
   "Gebeliğe Bağlı Hipertansiyon",
   "Gestasyonel Diyabet",
   "Ağrılı Adet (Dismenore)",
-  "Sistektomi",
+  "Kistektomi",
   "Miyom Tedavisi",
   "Endometriozis",
   "HPV / Kolposkopi",
@@ -93,7 +93,7 @@ export default function HakkimdaPage() {
                 Dr. Elçi, Robotik Cerrahi, Kısırlık, Yüksek Riskli Gebelikler,
                 İleri Laparoskopik Cerrahi, Histeroskopi, Jinekoloji – Onkoloji,
                 Üçüz Gebelik, Gebeliğe Bağlı Hipertansiyon, Gestasyonel Diyabet,
-                Ağrılı Adet ve Sistektomi gibi çok çeşitli alanlarda
+                Ağrılı Adet ve Kistektomi gibi çok çeşitli alanlarda
                 uzmanlaşmıştır.
               </p>
               <p className="leading-relaxed">

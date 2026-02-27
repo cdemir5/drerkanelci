@@ -85,8 +85,7 @@ export default function HeroSection() {
                   </span>
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-dark">İstinye Üniversitesi</p>
-                  <p className="text-xs text-gray-500">Medical Park Hastanesi</p>
+                  <p className="text-sm font-bold text-dark">Doç. Dr. Erkan Elçi</p>
                 </div>
               </div>
             </div>

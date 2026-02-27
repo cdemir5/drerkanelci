@@ -24,6 +24,15 @@ export const navigation: NavItem[] = [
     ],
   },
   {
+    label: "Endometriozis",
+    href: "/endometriozis",
+    children: [
+      { label: "Endometriozis ve Çikolata Kisti", href: "/endometriozis/cikolata-kisti" },
+      { label: "Endometriozis Belirtileri ve Tedavi", href: "/endometriozis/belirtileri-tedavi" },
+      { label: "Endometriozis ile Baş Etme", href: "/endometriozis/bas-etme-yollari" },
+    ],
+  },
+  {
     label: "Kadın Kanserleri",
     href: "/jinekolojik-onkoloji",
     children: [
@@ -85,15 +94,6 @@ export const navigation: NavItem[] = [
       { label: "LEEP Ameliyatı Nedir?", href: "/hpv-kolposkopi/leep-ameliyati" },
       { label: "Konizasyon Nedir?", href: "/hpv-kolposkopi/konizasyon" },
       { label: "Kolposkopi Nedir?", href: "/hpv-kolposkopi/kolposkopi-nedir" },
-    ],
-  },
-  {
-    label: "Endometriozis",
-    href: "/endometriozis",
-    children: [
-      { label: "Endometriozis ve Çikolata Kisti", href: "/endometriozis/cikolata-kisti" },
-      { label: "Endometriozis Belirtileri ve Tedavi", href: "/endometriozis/belirtileri-tedavi" },
-      { label: "Endometriozis ile Baş Etme", href: "/endometriozis/bas-etme-yollari" },
     ],
   },
   {

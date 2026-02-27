@@ -326,7 +326,7 @@ export const diseases: Record<string, Disease> = {
       {
         title: "Çikolata Kisti Tedavisi",
         content:
-          "Tedavi, kistin boyutu, hastanın yaşı ve gebelik planlarına göre belirlenir:\n\n- **Takip**: Küçük (<3 cm) ve semptomsuz kistlerde düzenli ultrason takibi\n- **İlaç tedavisi**: Hormonal tedaviler ile kistin büyümesinin engellenmesi\n- **Laparoskopik cerrahi (Sistektomi)**: Kistin yumurtalık korunarak çıkarılması\n- **Robotik cerrahi**: Hassas kist çıkarma ve yumurtalık koruma\n\nDoç. Dr. Erkan Elçi, sistektomi (kist çıkarma) ameliyatlarında uzmanlaşmıştır.",
+          "Tedavi, kistin boyutu, hastanın yaşı ve gebelik planlarına göre belirlenir:\n\n- **Takip**: Küçük (<3 cm) ve semptomsuz kistlerde düzenli ultrason takibi\n- **İlaç tedavisi**: Hormonal tedaviler ile kistin büyümesinin engellenmesi\n- **Laparoskopik cerrahi (Kistektomi)**: Kistin yumurtalık korunarak çıkarılması\n- **Robotik cerrahi**: Hassas kist çıkarma ve yumurtalık koruma\n\n**Kistektomi Nedir?**\nKistektomi, yumurtalık üzerinde oluşan kistin (çikolata kisti, dermoid kist vb.) yumurtalık dokusu korunarak cerrahi olarak çıkarılması işlemidir. Laparoskopik veya robotik yöntemle gerçekleştirilen kistektomide amaç, sağlıklı yumurtalık dokusunu maksimum düzeyde koruyarak kistin tamamını temizlemektir. Bu sayede hastanın yumurtalık rezervi ve doğurganlık kapasitesi korunmuş olur.\n\nDoç. Dr. Erkan Elçi, kistektomi (kist çıkarma) ameliyatlarında uzmanlaşmıştır.",
       },
     ],
     symptoms: [
@@ -345,7 +345,7 @@ export const diseases: Record<string, Disease> = {
       {
         question: "Çikolata kisti ameliyatı sonrası hamile kalabilir miyim?",
         answer:
-          "Evet, başarılı bir sistektomi sonrası hamile kalma şansınız artar. Ameliyat yumurtalık koruyucu şekilde yapılır.",
+          "Evet, başarılı bir kistektomi sonrası hamile kalma şansınız artar. Ameliyat yumurtalık koruyucu şekilde yapılır.",
       },
     ],
     parentSlug: "endometriozis",

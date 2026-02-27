@@ -21,11 +21,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="mb-4">
               <Logo size="small" />
-              <h3 className="text-xl font-bold text-white">
-                Doç. Dr. Erkan Elçi
-              </h3>
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Kadın Hastalıkları ve Doğum Uzmanı. 23 yıllık deneyim ile
@@ -103,14 +100,41 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">
               İletişim
             </h4>
-            <ul className="space-y-4">
-              <li className="flex gap-3">
-                <FiMapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-sm">
-                  {contactInfo.address}
-                  <br />
-                  {contactInfo.city}
+            {/* Map */}
+            <a
+              href={contactInfo.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl overflow-hidden mb-4 h-[180px] relative group"
+            >
+              <iframe
+                src={contactInfo.mapEmbed}
+                width="100%"
+                height="100%"
+                className="border-0 pointer-events-none"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Konum Haritası"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <span className="opacity-0 group-hover:opacity-100 text-white text-sm font-medium bg-primary px-3 py-1.5 rounded-lg transition-opacity">
+                  Google Maps&apos;te Aç
                 </span>
+              </div>
+            </a>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href={contactInfo.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-3 hover:text-secondary transition-colors"
+                >
+                  <FiMapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">
+                    {contactInfo.address}
+                  </span>
+                </a>
               </li>
               <li>
                 <a

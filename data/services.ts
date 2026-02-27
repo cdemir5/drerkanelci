@@ -83,26 +83,41 @@ export const whyChooseUs = [
   },
 ];
 
+export const googleRating = {
+  score: 5.0,
+  totalReviews: 34,
+};
+
 export const testimonials = [
   {
-    name: "Ayşe Y.",
-    text: "Doç. Dr. Erkan Elçi sayesinde miyom ameliyatımı başarılı bir şekilde atlattım. Kendisi çok ilgili ve bilgili bir doktor. Ameliyat sonrası süreç de çok rahat geçti.",
+    name: "Turkan Turk",
+    text: "Kadın doğum doktoru Doç. Dr. Erkan Elçi hocamızı şiddetle TAVSİYE ediyorum. Bugün çocuğumu kucağıma aldıysam hocamızın sayesinde oldu. Daha önce iki kez kürtaj oldum, tekrar hamile kaldığımda birçok hastane dış gebelik dedi. Erkan hocamız beklememiz gerektiğini söyledi. Allah razı olsun ki hocamız bize gebelik tanısı koydu. İyi ki Erkan hocamıza karşılaştık, ailemizden biri artık.",
     rating: 5,
+    timeAgo: "9 ay önce",
   },
   {
-    name: "Fatma K.",
-    text: "Yüksek riskli gebeliğim boyunca beni takip etti ve sağlıklı bir doğum gerçekleştirdik. Her kontrolde detaylı bilgi veriyor ve güven veriyor.",
+    name: "Mehmet Şehitoğlu",
+    text: "Kesinlikle TAVSİYE EDİYORUM. Erkan hocam gerçekten çok bilgili, bu alanda kendini sürekli geliştiren birisi. Her sorumuzun cevabını gerek dünyada yazılmış farklı makalelerden, gerek yaşadığı tecrübelerden örnek vererek cevapladı. Eşim Plasenta Previa olmasına rağmen gayet sağlıklı bir şekilde doğum yaptırdı. Kızımızı kucağımıza aldık. Ne kadar teşekkür etsek az.",
     rating: 5,
+    timeAgo: "2 yıl önce",
   },
   {
-    name: "Zeynep M.",
-    text: "Endometriozis tedavim için başvurdum. Laparoskopik cerrahi ile başarılı bir operasyon geçirdim. Çok profesyonel ve güler yüzlü bir ekip.",
+    name: "Nilay Bilal",
+    text: "Erkan hocam ile 38+2'de Spinal anesteziyle doğumu gerçekleştirdik. Çok şükür hocamın güler yüzü, tecrübesi, ilgi ve alasıyla güzel bir süreç geçirdik. Hamilelik yolculuğunuzda kendisi çok iyi bir yol arkadaşı, tavsiye ederim.",
     rating: 5,
+    timeAgo: "bir yıl önce",
   },
   {
-    name: "Elif S.",
-    text: "Robotik cerrahi ile ameliyat oldum. İyileşme sürecim çok hızlı geçti. Doç. Dr. Elçi'ye ve ekibine çok teşekkür ederim.",
+    name: "Muhammed Ali Kaya",
+    text: "2. Çocuğumuzun takibi için Erkan hocamız ile tanıştığımız günden beri sürekli her gidişimizde eşim ile birlikte bir çok soru biriktirip gidiyoruz ama her ne hikmetse hocam bizim soracağımız soruları tahmin edermiş gibi hepsini kendiliğinden cevaplıyor, sormamıza gerek bile kalmıyor. İyi ki varsınız.",
     rating: 5,
+    timeAgo: "8 ay önce",
+  },
+  {
+    name: "Ozlem Peksoy",
+    text: "Rahim ameliyatımı yıllardır korkudan erteliyordum. Tesadüfen karşıma çıkan Erkan Hocam bana tüm detayları güzel enerjisi ile uzun uzun anlattı. O kadar kalbi güzel ve muhteşem bir doktor ki o gün 1 saat içinde ameliyata karar verdim. Ameliyatım sorunsuz tamamlandı, 1 hafta içinde herişimi rahatlıkla yapabilecek durumadaydım. Hiç düşünmeden gözünüz kapalı kendinizi emanet edebilirsiniz.",
+    rating: 5,
+    timeAgo: "2 yıl önce",
   },
 ];
 
