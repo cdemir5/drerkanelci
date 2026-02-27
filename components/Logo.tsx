@@ -20,7 +20,7 @@ export default function Logo({
       alt="Doç. Dr. Erkan Elçi Logo"
       width={w}
       height={h}
-      className={className}
+      className={`w-auto h-auto ${className}`}
       priority
     />
   );

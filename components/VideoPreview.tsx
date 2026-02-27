@@ -1,15 +1,19 @@
 "use client";
 
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiPlay, FiArrowRight } from "react-icons/fi";
 import { FaYoutube } from "react-icons/fa";
 import { videos } from "@/data/videos";
 
+const defaultVideos = videos.slice(0, 3);
+
 export default function VideoPreview() {
-  const randomVideos = useMemo(() => {
+  const [randomVideos, setRandomVideos] = useState(defaultVideos);
+
+  useEffect(() => {
     const shuffled = [...videos].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 3);
+    setRandomVideos(shuffled.slice(0, 3));
   }, []);
 
   return (
