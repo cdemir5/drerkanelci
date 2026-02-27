@@ -6,7 +6,6 @@ export const contactInfo = {
   email: "info@drerkanelci.com.tr",
   address: "Ataköy 2-5-6. Kısım, No:59 A Blok 1. Kat, 34250 Bakırköy/İstanbul",
   city: "İstanbul",
-  hospital: "İstinye Üniversitesi Medical Park Hastanesi",
   mapLink: "https://maps.app.goo.gl/hWwVXViSQoAhffBR6?g_st=iwb",
   domain: "www.drerkanelci.com",
   social: {

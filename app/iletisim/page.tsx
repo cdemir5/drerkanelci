@@ -83,7 +83,6 @@ export default function IletisimPage() {
                     <FiMapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-600">{contactInfo.address}</p>
-                      <p className="text-xs text-gray-500 mt-1">{contactInfo.hospital}</p>
                     </div>
                   </div>
                 </div>
@@ -244,6 +243,7 @@ export default function IletisimPage() {
                           Konu
                         </label>
                         <select
+                          title="Konu"
                           value={formData.subject}
                           onChange={(e) =>
                             setFormData({

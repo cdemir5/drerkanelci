@@ -155,11 +155,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="mt-6">
-              <p className="text-xs text-gray-400">
-                {contactInfo.hospital}
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -169,7 +164,7 @@ export default function Footer() {
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Doç. Dr. Erkan Elçi. Tüm hakları
-            saklıdır.
+            saklıdır. | <a href="mailto:cdemir5@hotmail.com" className="hover:text-secondary transition-colors">Designed by CDNET</a>
           </p>
           <p className="text-xs text-gray-500">
             Bu sitedeki bilgiler genel bilgilendirme amaçlıdır. Tıbbi teşhis

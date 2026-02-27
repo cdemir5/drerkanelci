@@ -27,7 +27,7 @@ const education = [
   {
     year: "2013 - Günümüz",
     title: "Kadın Hastalıkları ve Doğum Uzmanı - Doçent",
-    institution: "İstinye Üniversitesi Medical Park Gaziosmanpaşa Hastanesi",
+    institution: "",
     icon: FaHospital,
   },
 ];
@@ -83,12 +83,6 @@ export default function HakkimdaPage() {
             </div>
 
             <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
-              <p className="text-lg leading-relaxed">
-                Dr. Erkan Elçi, İstanbul, Türkiye&apos;de yaşayan saygın bir Jinekolog
-                ve Kadın Doğum uzmanıdır. 23 yıllık etkileyici tecrübesiyle
-                İstinye Üniversitesi Medical Park Gaziosmanpaşa Hastanesi&apos;nin
-                güvenilir danışmanıdır.
-              </p>
               <p className="leading-relaxed">
                 Dr. Elçi, Robotik Cerrahi, Kısırlık, Yüksek Riskli Gebelikler,
                 İleri Laparoskopik Cerrahi, Histeroskopi, Jinekoloji – Onkoloji,
