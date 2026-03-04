@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { FiPlay, FiArrowRight } from "react-icons/fi";
 import { FaYoutube } from "react-icons/fa";
 import { videos } from "@/data/videos";
@@ -10,6 +11,7 @@ const defaultVideos = videos.slice(0, 3);
 
 export default function VideoPreview() {
   const [randomVideos, setRandomVideos] = useState(defaultVideos);
+  const t = useTranslations("common");
 
   useEffect(() => {
     const shuffled = [...videos].sort(() => Math.random() - 0.5);
@@ -21,11 +23,11 @@ export default function VideoPreview() {
       <div className="container-custom">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-medium rounded-full mb-4">
-            Video İçerikler
+            {t("videoContent")}
           </span>
-          <h2 className="section-title">Bilgilendirici Videolarımız</h2>
+          <h2 className="section-title">{t("informativeVideos")}</h2>
           <p className="section-subtitle">
-            Sağlığınız hakkında bilgilendirici YouTube videolarımız
+            {t("videoSubtitle")}
           </p>
         </div>
 
@@ -71,7 +73,7 @@ export default function VideoPreview() {
             href="/videolar"
             className="inline-flex items-center gap-2 btn-outline"
           >
-            Tüm Videoları Gör
+            {t("seeAllVideos")}
             <FiArrowRight className="w-4 h-4" />
           </Link>
         </div>

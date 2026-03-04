@@ -1,0 +1,32 @@
+{
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktieren Sie uns für einen Termin oder bei Fragen.",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "workingHours": "Arbeitszeiten",
+    "socialMedia": "Soziale Medien",
+    "writeToUs": "Schreiben Sie Uns",
+    "fullName": "Vollständiger Name",
+    "fullNamePlaceholder": "Ihr vollständiger Name",
+    "emailPlaceholder": "beispiel@email.com",
+    "phonePlaceholder": "+49 XXX XXXXXXX",
+    "subject": "Betreff",
+    "selectSubject": "Betreff Auswählen",
+    "appointmentRequest": "Terminanfrage",
+    "infoRequest": "Informationsanfrage",
+    "onlineConsultation": "Online-Beratung",
+    "other": "Sonstiges",
+    "message": "Ihre Nachricht",
+    "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+    "send": "Senden",
+    "messageSent": "Nachricht Erhalten!",
+    "messageSuccess": "Wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "weekdays": "Montag - Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag",
+    "closed": "Geschlossen",
+    "locationMap": "Standortkarte",
+    "openInGoogleMaps": "In Google Maps öffnen"
+  }
+}

@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { stats } from "@/data/services";
+import { useTranslations } from "next-intl";
 import { FiAward, FiBookOpen, FiHeart, FiSmile } from "react-icons/fi";
 
 const icons = [FiAward, FiBookOpen, FiHeart, FiSmile];
+const statValues = [
+  { value: 23, suffix: "+" },
+  { value: 50, suffix: "+" },
+  { value: 10000, suffix: "+" },
+  { value: 15000, suffix: "+" },
+];
 
 function useCountUp(target: number, isVisible: boolean) {
   const [count, setCount] = useState(0);
@@ -50,7 +56,7 @@ function StatItem({
         <Icon className="w-7 h-7 text-secondary" />
       </div>
       <p className="text-3xl md:text-4xl font-bold text-white mb-1">
-        {count.toLocaleString("tr-TR")}
+        {count.toLocaleString()}
         {suffix}
       </p>
       <p className="text-sm text-white/70">{label}</p>
@@ -61,6 +67,14 @@ function StatItem({
 export default function StatsCounter() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations("home");
+
+  const labels = [
+    t("stats.yearsExperience"),
+    t("stats.scientificPublications"),
+    t("stats.successfulSurgeries"),
+    t("stats.happyPatients"),
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,12 +94,12 @@ export default function StatsCounter() {
     <section ref={ref} className="gradient-primary py-16">
       <div className="container-custom">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, i) => (
+          {statValues.map((stat, i) => (
             <StatItem
               key={i}
               value={stat.value}
               suffix={stat.suffix}
-              label={stat.label}
+              label={labels[i]}
               icon={icons[i]}
               isVisible={isVisible}
             />

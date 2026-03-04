@@ -1,24 +1,32 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { FiAward, FiCpu, FiBookOpen, FiHeart } from "react-icons/fi";
-import { whyChooseUs } from "@/data/services";
 
 const icons = [FiAward, FiCpu, FiBookOpen, FiHeart];
 
 export default function WhyChooseUs() {
+  const t = useTranslations("home");
+
+  const reasons = [
+    { title: t("whyChooseUs.reason1Title"), desc: t("whyChooseUs.reason1Desc") },
+    { title: t("whyChooseUs.reason2Title"), desc: t("whyChooseUs.reason2Desc") },
+    { title: t("whyChooseUs.reason3Title"), desc: t("whyChooseUs.reason3Desc") },
+    { title: t("whyChooseUs.reason4Title"), desc: t("whyChooseUs.reason4Desc") },
+  ];
+
   return (
     <section className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-medium rounded-full mb-4">
-            Neden Biz?
+            {t("whyChooseUs.badge")}
           </span>
-          <h2 className="section-title">Neden Doç. Dr. Erkan Elçi?</h2>
-          <p className="section-subtitle">
-            Sağlığınız için doğru tercihi yapmanızda size yardımcı oluyoruz
-          </p>
+          <h2 className="section-title">{t("whyChooseUs.title")}</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {whyChooseUs.map((item, i) => {
+          {reasons.map((item, i) => {
             const Icon = icons[i];
             return (
               <div
@@ -31,7 +39,7 @@ export default function WhyChooseUs() {
                 <h3 className="text-lg font-bold text-dark mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
+                <p className="text-sm text-gray-600">{item.desc}</p>
               </div>
             );
           })}

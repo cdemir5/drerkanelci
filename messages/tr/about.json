@@ -1,0 +1,29 @@
+{
+  "about": {
+    "title": "Hakkımda",
+    "metaDescription": "Doç. Dr. Erkan Elçi - Kadın Hastalıkları ve Doğum Uzmanı. 23 yıllık deneyim, 50+ bilimsel yayın. Özgeçmiş ve uzmanlık alanları.",
+    "doctorName": "Doç. Dr. Erkan Elçi",
+    "doctorSpecialty": "Kadın Hastalıkları ve Doğum Uzmanı",
+    "bio1": "Dr. Elçi, Robotik Cerrahi, Kısırlık, Yüksek Riskli Gebelikler, İleri Laparoskopik Cerrahi, Histeroskopi, Jinekoloji – Onkoloji, Üçüz Gebelik, Gebeliğe Bağlı Hipertansiyon, Gestasyonel Diyabet, Ağrılı Adet ve Kistektomi gibi çok çeşitli alanlarda uzmanlaşmıştır.",
+    "bio2": "Tıp eğitimini 2007 yılında Ege Üniversitesi Tıp Fakültesi'nde tamamladı ve 2013 yılında Yüzüncü Yıl Tıp Fakültesi'nde Kadın Hastalıkları ve Doğum alanında uzmanlaştı.",
+    "bio3": "Dr. Elçi, 50'nin üzerinde araştırma makalesi ile Kadın Hastalıkları ve Doğum alanına önemli katkılarda bulunmuştur. Saygın dergilerde yayınlanan çalışmaları ile akademik alanda da tanınan Dr. Elçi, uzmanlığı ve özverisi ile çok sayıda ödül ve tanınma kazanmıştır.",
+    "educationBadge": "Eğitim",
+    "educationTitle": "Eğitim ve Kariyer",
+    "edu1Year": "2002 - 2007",
+    "edu1Title": "Tıp Fakültesi",
+    "edu1Institution": "Ege Üniversitesi Tıp Fakültesi",
+    "edu2Year": "2007 - 2013",
+    "edu2Title": "Kadın Hastalıkları ve Doğum Uzmanlığı",
+    "edu2Institution": "Yüzüncü Yıl Tıp Fakültesi",
+    "edu3Year": "2013 - Günümüz",
+    "edu3Title": "Kadın Hastalıkları ve Doğum Uzmanı - Doçent",
+    "specialtyBadge": "Uzmanlık",
+    "specialtyTitle": "Uzmanlık Alanları",
+    "specialties": ["Robotik Cerrahi", "Kısırlık (İnfertilite)", "Yüksek Riskli Gebelikler", "İleri Laparoskopik Cerrahi", "Histeroskopi", "Jinekoloji - Onkoloji", "Üçüz Gebelik", "Gebeliğe Bağlı Hipertansiyon", "Gestasyonel Diyabet", "Ağrılı Adet (Dismenore)", "Kistektomi", "Miyom Tedavisi", "Endometriozis", "HPV / Kolposkopi", "Genital Estetik"],
+    "publicationsTitle": "Bilimsel Yayınlar",
+    "publicationsDesc": "50'nin üzerinde araştırma makalesi saygın uluslararası ve ulusal tıp dergilerinde yayınlanmıştır. Jinekoloji ve obstetrik alanında güncel araştırmalara katkı sağlamaya devam etmektedir.",
+    "awardsTitle": "Ödüller ve Tanınırlık",
+    "awardsDesc": "Uzmanlığı ve özverili çalışmaları ile çok sayıda ulusal ve uluslararası ödül ve tanınma kazanmıştır. Akademik ve klinik başarıları ile alanında saygın bir konuma sahiptir.",
+    "footerDescription": "Kadın Hastalıkları ve Doğum Uzmanı. 23 yıllık deneyim ile robotik cerrahi, jinekolojik onkoloji ve yüksek riskli gebelikler alanlarında hizmet vermektedir."
+  }
+}

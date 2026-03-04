@@ -1,10 +1,48 @@
 import { MetadataRoute } from "next";
+import { locales, defaultLocale, type Locale } from "@/i18n/config";
+import { routing } from "@/i18n/routing";
+import { slugMap, categorySubPages } from "@/i18n/slugs";
+
+const baseUrl = "https://drerkanelci.com";
+
+// Category parent paths (TR key → routing pathname key)
+const categoryPaths: Record<string, string> = {
+  miyom: "/miyom",
+  endometriozis: "/endometriozis",
+  "jinekolojik-onkoloji": "/jinekolojik-onkoloji",
+  "genital-estetik": "/genital-estetik",
+  "hpv-kolposkopi": "/hpv-kolposkopi",
+};
+
+function getLocalizedPath(pathnameKey: string, locale: Locale): string {
+  const pathConfig = (routing.pathnames as Record<string, any>)[pathnameKey];
+  if (!pathConfig) return pathnameKey;
+  if (typeof pathConfig === "string") return pathConfig;
+  return pathConfig[locale] ?? pathConfig.tr ?? pathnameKey;
+}
+
+function buildUrl(locale: Locale, path: string): string {
+  const prefix = locale === defaultLocale ? "" : `/${locale}`;
+  return `${baseUrl}${prefix}${path}`;
+}
+
+function buildAlternates(
+  getPath: (locale: Locale) => string
+): Record<string, string> {
+  const alternates: Record<string, string> = {};
+  for (const locale of locales) {
+    const key = locale === defaultLocale ? "tr" : locale;
+    alternates[key] = buildUrl(locale, getPath(locale));
+  }
+  return alternates;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://drerkanelci.com";
+  const entries: MetadataRoute.Sitemap = [];
 
-  const routes = [
-    "",
+  // Standalone pages (no sub-slugs)
+  const standaloneKeys = [
+    "/",
     "/hakkimda",
     "/iletisim",
     "/videolar",
@@ -17,76 +55,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/jinekoloji",
     "/urojinekoloji",
     "/vnotes",
-    "/endometriozis",
-    "/endometriozis/belirtileri-tedavi",
-    "/endometriozis/bas-etme-yollari",
-    "/endometriozis/cikolata-kisti",
-    "/miyom",
-    "/miyom/miyom-nedir",
-    "/miyom/izsiz-miyom-ameliyati",
-    "/miyom/vajinal-miyom-ameliyati",
-    "/miyom/dikissiz-miyom-ameliyati",
-    "/miyom/vnotes-miyom-ameliyati",
-    "/miyom/rahim-koruyucu-miyom-ameliyati",
-    "/miyom/rahim-alinmadan-miyom-ameliyati",
-    "/miyom/kapali-miyom-ameliyati",
-    "/miyom/rahim-cikartmadan-miyom-ameliyati",
-    "/miyom/sikca-sorulan-sorular",
-    "/genital-estetik",
-    "/genital-estetik/labioplasti",
-    "/genital-estetik/vajinal-daraltma",
-    "/genital-estetik/klitoris-estetigi",
-    "/genital-estetik/monsplasti",
-    "/genital-estetik/perinoplasti",
-    "/genital-estetik/barbieplasti",
-    "/genital-estetik/kok-hucre-eksosom",
-    "/genital-estetik/prp-mezoterapi",
-    "/genital-estetik/yag-injeksiyonu",
-    "/genital-estetik/orgazm-asisi",
-    "/genital-estetik/genital-estetik-labioplasti",
-    "/genital-estetik/dogal-genital-estetik",
-    "/genital-estetik/revizyon-genital-estetik",
-    "/genital-estetik/barbie-genital-estetik",
-    "/genital-estetik/barbie-vajina-estetigi",
-    "/hpv-kolposkopi",
-    "/hpv-kolposkopi/hpv-nedir",
-    "/hpv-kolposkopi/hpv-iliskili-hastaliklar",
-    "/hpv-kolposkopi/hpv-asilamasi",
-    "/hpv-kolposkopi/kolposkopi-nedir",
-    "/hpv-kolposkopi/pap-smear",
-    "/hpv-kolposkopi/ascus",
-    "/hpv-kolposkopi/asc-h",
-    "/hpv-kolposkopi/lsil",
-    "/hpv-kolposkopi/hsil",
-    "/hpv-kolposkopi/cin-siniflandirmasi",
-    "/hpv-kolposkopi/cin-lazer-tedavisi",
-    "/hpv-kolposkopi/leep-ameliyati",
-    "/hpv-kolposkopi/konizasyon",
-    "/hpv-kolposkopi/genital-sigil",
-    "/hpv-kolposkopi/genital-sigil-tedavisi",
-    "/hpv-kolposkopi/gebelerde-genital-sigil",
-    "/hpv-kolposkopi/bitkisel-tedaviler",
-    "/jinekolojik-onkoloji",
-    "/jinekolojik-onkoloji/rahim-agzi-kanseri",
-    "/jinekolojik-onkoloji/rahim-kanseri",
-    "/jinekolojik-onkoloji/yumurtalik-kanseri",
-    "/jinekolojik-onkoloji/vulva-kanseri",
-    "/jinekolojik-onkoloji/vajina-kanseri",
-    "/jinekolojik-onkoloji/tup-kanseri",
-    "/jinekolojik-onkoloji/periton-kanseri",
-    "/jinekolojik-onkoloji/rahim-sarkomu",
-    "/jinekolojik-onkoloji/hpv-asilamasi",
-    "/jinekolojik-onkoloji/hipec",
-    "/jinekolojik-onkoloji/metastatik-kanser",
-    "/jinekolojik-onkoloji/trofoblastik-tumorler",
-    "/jinekolojik-onkoloji/nuks-kanser",
-    "/jinekolojik-onkoloji/meme-kanseri-taramasi",
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.includes("/") && route.split("/").length > 2 ? 0.6 : 0.8,
-  }));
+  for (const key of standaloneKeys) {
+    const priority = key === "/" ? 1 : 0.8;
+    const changeFrequency = key === "/" ? "weekly" : "monthly";
+
+    entries.push({
+      url: buildUrl(defaultLocale, getLocalizedPath(key, defaultLocale)),
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      alternates: {
+        languages: buildAlternates((locale) =>
+          getLocalizedPath(key, locale)
+        ),
+      },
+    });
+  }
+
+  // Category parent pages
+  for (const [, pathKey] of Object.entries(categoryPaths)) {
+    entries.push({
+      url: buildUrl(
+        defaultLocale,
+        getLocalizedPath(pathKey, defaultLocale)
+      ),
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: buildAlternates((locale) =>
+          getLocalizedPath(pathKey, locale)
+        ),
+      },
+    });
+  }
+
+  // Category sub-pages
+  for (const [category, subPages] of Object.entries(categorySubPages)) {
+    const parentPathKey = categoryPaths[category];
+    if (!parentPathKey) continue;
+
+    for (const subKey of subPages) {
+      const slugEntry = slugMap[subKey];
+      if (!slugEntry) continue;
+
+      entries.push({
+        url: buildUrl(
+          defaultLocale,
+          `${getLocalizedPath(parentPathKey, defaultLocale)}/${slugEntry.tr}`
+        ),
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: {
+          languages: buildAlternates((locale) => {
+            const parentPath = getLocalizedPath(parentPathKey, locale);
+            const subSlug = slugEntry[locale] ?? slugEntry.tr;
+            return `${parentPath}/${subSlug}`;
+          }),
+        },
+      });
+    }
+  }
+
+  return entries;
 }

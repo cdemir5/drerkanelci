@@ -1,0 +1,32 @@
+{
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Randevu almak veya sorularınız için bize ulaşın.",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "workingHours": "Çalışma Saatleri",
+    "socialMedia": "Sosyal Medya",
+    "writeToUs": "Bize Yazın",
+    "fullName": "Ad Soyad",
+    "fullNamePlaceholder": "Adınız Soyadınız",
+    "emailPlaceholder": "ornek@email.com",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "subject": "Konu",
+    "selectSubject": "Konu Seçiniz",
+    "appointmentRequest": "Randevu Talebi",
+    "infoRequest": "Bilgi Talebi",
+    "onlineConsultation": "Online Görüşme",
+    "other": "Diğer",
+    "message": "Mesajınız",
+    "messagePlaceholder": "Mesajınızı yazınız...",
+    "send": "Gönder",
+    "messageSent": "Mesajınız Alındı!",
+    "messageSuccess": "En kısa sürede size dönüş yapacağız.",
+    "weekdays": "Pazartesi - Cuma",
+    "saturday": "Cumartesi",
+    "sunday": "Pazar",
+    "closed": "Kapalı",
+    "locationMap": "Konum Haritası",
+    "openInGoogleMaps": "Google Maps'te Aç"
+  }
+}

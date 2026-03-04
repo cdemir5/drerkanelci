@@ -1,18 +1,30 @@
 "use client";
 
-import { faqs } from "@/data/services";
+import { useTranslations } from "next-intl";
 
 export default function FAQ() {
+  const t = useTranslations("home");
+  const tc = useTranslations("common");
+
+  const faqs = [
+    { question: t("faq.q1"), answer: t("faq.a1") },
+    { question: t("faq.q2"), answer: t("faq.a2") },
+    { question: t("faq.q3"), answer: t("faq.a3") },
+    { question: t("faq.q4"), answer: t("faq.a4") },
+    { question: t("faq.q5"), answer: t("faq.a5") },
+    { question: t("faq.q6"), answer: t("faq.a6") },
+  ];
+
   return (
     <section className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-medium rounded-full mb-4">
-            SSS
+            {tc("faqBadge")}
           </span>
-          <h2 className="section-title">Sık Sorulan Sorular</h2>
+          <h2 className="section-title">{tc("faq")}</h2>
           <p className="section-subtitle">
-            En çok merak edilen sorular ve cevapları
+            {tc("faqSubtitle")}
           </p>
         </div>
 

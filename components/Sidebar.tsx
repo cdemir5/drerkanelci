@@ -1,17 +1,20 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
 import { FiArrowRight, FiPhone, FiClock } from "react-icons/fi";
-import { getSidebarDiseases } from "@/data/diseases";
+import { getSidebarByLocale } from "@/data/getDiseaseData";
 import { contactInfo, workingHours } from "@/data/contact";
 
 export default function Sidebar({ currentSlug }: { currentSlug: string }) {
-  const diseases = getSidebarDiseases();
+  const t = useTranslations("common");
+  const locale = useLocale();
+  const diseases = getSidebarByLocale(locale);
 
   return (
     <div className="space-y-6 lg:sticky lg:top-28">
       {/* Disease List */}
       <div className="bg-white rounded-2xl shadow-lg border p-6">
         <h3 className="text-lg font-bold text-dark mb-4">
-          Tedavi Alanları
+          {t("treatmentAreas")}
         </h3>
         <ul className="space-y-1">
           {diseases.map((d) => {
@@ -19,7 +22,7 @@ export default function Sidebar({ currentSlug }: { currentSlug: string }) {
             return (
               <li key={d.href}>
                 <Link
-                  href={d.href}
+                  href={d.href as any}
                   className={`flex items-center justify-between py-2.5 px-3 rounded-lg text-sm transition-all ${
                     isActive
                       ? "bg-primary text-white font-medium"
@@ -37,7 +40,7 @@ export default function Sidebar({ currentSlug }: { currentSlug: string }) {
 
       {/* Contact Card */}
       <div className="gradient-primary rounded-2xl p-6 text-white">
-        <h3 className="text-lg font-bold mb-4">Randevu Alın</h3>
+        <h3 className="text-lg font-bold mb-4">{t("bookAppointment")}</h3>
         <div className="space-y-3 mb-6">
           <a
             href={`tel:${contactInfo.phoneClean}`}
@@ -61,7 +64,7 @@ export default function Sidebar({ currentSlug }: { currentSlug: string }) {
           href="/iletisim"
           className="block w-full text-center py-3 bg-white text-primary font-semibold rounded-xl hover:bg-gray-100 transition-colors"
         >
-          İletişime Geçin
+          {t("contactUs")}
         </Link>
       </div>
     </div>

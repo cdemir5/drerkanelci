@@ -1,0 +1,58 @@
+{
+  "services": {
+    "roboticSurgery": {
+      "title": "Robotic Surgery",
+      "metaTitle": "Robotic Surgery | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Minimally invasive surgeries with robotic surgery. Less pain, faster recovery. Expert doctor in Istanbul.",
+      "description": "Minimally invasive surgeries with state-of-the-art robotic surgery systems. Less pain, faster recovery."
+    },
+    "infertility": {
+      "title": "Infertility Treatment",
+      "metaTitle": "Infertility Treatment | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Modern approaches in infertility treatment. IVF, IUI and surgical treatment options.",
+      "description": "Personalized approaches and modern treatment methods in infertility treatment."
+    },
+    "highRiskPregnancy": {
+      "title": "High-Risk Pregnancies",
+      "metaTitle": "High-Risk Pregnancy Care | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Monitoring and management of high-risk pregnancies. Safe pregnancy with 23 years of experience.",
+      "description": "Safe outcomes with 23 years of experience in monitoring and managing high-risk pregnancies."
+    },
+    "advancedLaparoscopy": {
+      "title": "Advanced Laparoscopic Surgery",
+      "metaTitle": "Advanced Laparoscopic Surgery | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Minimally invasive treatment with advanced laparoscopic surgery. Endometriosis, fibroid and cyst surgeries.",
+      "description": "Minimally invasive treatment options with advanced laparoscopic surgical techniques."
+    },
+    "hysteroscopicSurgery": {
+      "title": "Hysteroscopic Surgery",
+      "metaTitle": "Hysteroscopic Surgery | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Intrauterine procedures with hysteroscopic surgery. Polyp, fibroid and septum treatment.",
+      "description": "Hysteroscopic surgery for diagnosis and treatment of intrauterine pathologies."
+    },
+    "pregnancyBirth": {
+      "title": "Pregnancy and Birth",
+      "metaTitle": "Pregnancy Care and Birth | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Pregnancy care and safe delivery. Natural birth and cesarean section.",
+      "description": "Comprehensive monitoring during pregnancy and safe delivery services."
+    },
+    "gynecology": {
+      "title": "Gynecology",
+      "metaTitle": "Gynecology | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Diagnosis and treatment of gynecological conditions. Gynecological examination and treatment services.",
+      "description": "Comprehensive gynecological services in every area of women's health."
+    },
+    "urogynecology": {
+      "title": "Urogynecology",
+      "metaTitle": "Urogynecology | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Treatment of urinary incontinence and pelvic floor disorders. Urogynecology specialist.",
+      "description": "Expert approach in the treatment of urinary incontinence and pelvic floor disorders."
+    },
+    "vnotes": {
+      "title": "vNOTES",
+      "metaTitle": "vNOTES Surgery | Assoc. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Scarless surgery with vNOTES. Natural orifice surgery via vaginal route.",
+      "description": "Vaginal Natural Orifice Transluminal Endoscopic Surgery (vNOTES)."
+    }
+  }
+}

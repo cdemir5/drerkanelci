@@ -1,0 +1,73 @@
+{
+  "home": {
+    "hero": {
+      "badge": "Facharzt für Gynäkologie und Geburtshilfe",
+      "title1": "Assoz. Prof. Dr.",
+      "title2": "Erkan Elçi",
+      "description": "Fachkundige Betreuung in den Bereichen Roboterchirurgie, gynäkologische Onkologie, Risikoschwangerschaften und fortgeschrittene laparoskopische Chirurgie mit 23 Jahren Erfahrung.",
+      "yearsExperience": "Jahre Erfahrung",
+      "scientificPublications": "Wissenschaftliche Publikationen",
+      "surgeries": "Operationen"
+    },
+    "stats": {
+      "yearsExperience": "Jahre Erfahrung",
+      "scientificPublications": "Wissenschaftliche Publikationen",
+      "successfulSurgeries": "Erfolgreiche Operationen",
+      "happyPatients": "Zufriedene Patienten"
+    },
+    "services": {
+      "badge": "Fachgebiete",
+      "title": "Unsere Behandlungsbereiche",
+      "subtitle": "Fachkundige Betreuung in allen Bereichen der Frauengesundheit mit den fortschrittlichsten Methoden der modernen Medizin",
+      "roboticSurgery": "Roboterchirurgie",
+      "roboticSurgeryDesc": "Minimalinvasive Operationen mit modernsten Roboterchirurgiesystemen. Weniger Schmerzen, schnellere Genesung.",
+      "gynecologicalOncology": "Gynäkologische Onkologie",
+      "gynecologicalOncologyDesc": "Fachkundiger chirurgischer Ansatz bei Diagnose und Behandlung von Krebserkrankungen des weiblichen Fortpflanzungssystems.",
+      "fibroidTreatment": "Myombehandlung",
+      "fibroidTreatmentDesc": "Lösungen für Myomprobleme mit modernen Behandlungsmethoden einschließlich narbenfreier Myomchirurgie.",
+      "endometriosis": "Endometriose",
+      "endometriosisDesc": "Erfahrung in fortgeschrittener laparoskopischer Chirurgie bei der Behandlung von Endometriose und Schokoladenzysten.",
+      "highRiskPregnancy": "Risikoschwangerschaft",
+      "highRiskPregnancyDesc": "Sichere Ergebnisse mit 23 Jahren Erfahrung in der Überwachung und Betreuung von Risikoschwangerschaften.",
+      "hpvColposcopy": "HPV / Kolposkopie",
+      "hpvColposcopyDesc": "HPV-Diagnose und -Behandlung, Früherkennung durch Kolposkopie und präventive Ansätze."
+    },
+    "about": {
+      "badge": "Über Mich",
+      "description": "Dr. Erkan Elçi ist ein angesehener Gynäkologe und Geburtshelfer in Istanbul. Er ist vertrauenswürdiger Berater am Istinye University Medical Park Gaziosmanpaşa Krankenhaus. Er absolvierte sein Medizinstudium an der Ege-Universität 2007 und spezialisierte sich an der Yüzüncü Yıl Universität 2013.",
+      "highlight1": "23 Jahre klinische Erfahrung",
+      "highlight2": "50+ internationale wissenschaftliche Publikationen",
+      "highlight3": "Spezialist für Roboterchirurgie",
+      "highlight4": "Fortgeschrittene laparoskopische Chirurgie",
+      "highlight5": "Erfahrung in gynäkologischer Onkologie",
+      "highlight6": "Management von Risikoschwangerschaften",
+      "yearsExperience": "Jahre Erfahrung"
+    },
+    "whyChooseUs": {
+      "badge": "Warum Wir?",
+      "title": "Warum Assoz. Prof. Dr. Erkan Elçi?",
+      "reason1Title": "23 Jahre Erfahrung",
+      "reason1Desc": "Umfangreiche klinische Erfahrung in der Gynäkologie und Geburtshilfe",
+      "reason2Title": "Fortschrittliche Technologie",
+      "reason2Desc": "Möglichkeiten der Roboterchirurgie und fortgeschrittenen laparoskopischen Chirurgie",
+      "reason3Title": "Akademische Expertise",
+      "reason3Desc": "Über 50 internationale wissenschaftliche Publikationen und Forschungsarbeiten",
+      "reason4Title": "Patientenorientierter Ansatz",
+      "reason4Desc": "Personalisierte Behandlungspläne für jeden Patienten"
+    },
+    "faq": {
+      "q1": "Wie kann ich einen Termin vereinbaren?",
+      "a1": "Sie können uns unter +90 530 403 69 77 anrufen oder uns über WhatsApp erreichen, um einen Termin zu vereinbaren. Sie können auch das Kontaktformular auf unserer Website nutzen.",
+      "q2": "Wie hoch sind die Beratungsgebühren?",
+      "a2": "Bitte kontaktieren Sie uns für aktuelle Informationen zu den Beratungsgebühren. Wir haben eine Vereinbarung mit der Sozialversicherung.",
+      "q3": "Was ist Roboterchirurgie und welche Vorteile hat sie?",
+      "a3": "Roboterchirurgie ist eine minimalinvasive Operationsmethode, bei der der Chirurg über Roboterarme operiert. Sie bietet Vorteile wie weniger Schmerzen, weniger Blutungen, kleinere Schnitte, schnellere Genesung und weniger Narbenbildung.",
+      "q4": "Wie lange dauert die Genesung nach der Operation?",
+      "a4": "Die Genesungszeit variiert je nach Art der Operation. Bei laparoskopischen und robotergestützten Operationen können Patienten in der Regel innerhalb von 1-2 Wochen zu ihren täglichen Aktivitäten zurückkehren.",
+      "q5": "Bieten Sie Online-Beratungen an?",
+      "a5": "Ja, wir bieten Online-Videoberatungen für unsere Patienten aus dem Ausland oder anderen Städten an. Bitte kontaktieren Sie uns für einen Termin.",
+      "q6": "In welchem Krankenhaus arbeiten Sie?",
+      "a6": "Ich praktiziere am Istinye University Medical Park Gaziosmanpaşa Krankenhaus. Adresse: Küçükbakkalköy, Allianz Tower, Kayışdağı Cd. Nr. 1 Etage: 21, 22, Istanbul."
+    }
+  }
+}

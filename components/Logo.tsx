@@ -8,7 +8,7 @@ export default function Logo({
   size?: "default" | "small" | "large";
 }) {
   const dimensions = {
-    small: { w: 90, h: 90 },
+    small: { w: 190, h: 190 },
     default: { w: 220, h: 220 },
     large: { w: 300, h: 300 },
   };
@@ -20,7 +20,7 @@ export default function Logo({
       alt="Doç. Dr. Erkan Elçi Logo"
       width={w}
       height={h}
-      className={`w-auto h-auto ${className}`}
+      className={`${size === "small" ? "w-[190px] h-[190px]" : size === "large" ? "w-[300px] h-[300px]" : "w-[220px] h-[220px]"} ${className}`}
       priority
     />
   );

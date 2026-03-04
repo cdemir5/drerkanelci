@@ -1,0 +1,73 @@
+{
+  "home": {
+    "hero": {
+      "badge": "Obstetrics and Gynecology Specialist",
+      "title1": "Assoc. Prof. Dr.",
+      "title2": "Erkan Elçi",
+      "description": "Expert service in robotic surgery, gynecological oncology, high-risk pregnancies and advanced laparoscopic surgery with 23 years of experience.",
+      "yearsExperience": "Years Experience",
+      "scientificPublications": "Scientific Publications",
+      "surgeries": "Surgeries"
+    },
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "scientificPublications": "Scientific Publications",
+      "successfulSurgeries": "Successful Surgeries",
+      "happyPatients": "Happy Patients"
+    },
+    "services": {
+      "badge": "Specialties",
+      "title": "Our Treatment Areas",
+      "subtitle": "Expert service in every area of women's health with the most advanced methods of modern medicine",
+      "roboticSurgery": "Robotic Surgery",
+      "roboticSurgeryDesc": "Minimally invasive surgeries with state-of-the-art robotic surgery systems. Less pain, faster recovery.",
+      "gynecologicalOncology": "Gynecological Oncology",
+      "gynecologicalOncologyDesc": "Expert surgical approach in the diagnosis and treatment of female reproductive system cancers.",
+      "fibroidTreatment": "Fibroid Treatment",
+      "fibroidTreatmentDesc": "Solutions for fibroid problems with modern treatment methods including scarless fibroid surgery.",
+      "endometriosis": "Endometriosis",
+      "endometriosisDesc": "Advanced laparoscopic surgery experience in endometriosis and chocolate cyst treatment.",
+      "highRiskPregnancy": "High-Risk Pregnancy",
+      "highRiskPregnancyDesc": "Safe outcomes with 23 years of experience in monitoring and managing high-risk pregnancies.",
+      "hpvColposcopy": "HPV / Colposcopy",
+      "hpvColposcopyDesc": "HPV diagnosis and treatment, early detection with colposcopy and preventive approaches."
+    },
+    "about": {
+      "badge": "About",
+      "description": "Dr. Erkan Elçi is a respected Gynecologist and Obstetrician based in Istanbul. He serves as a trusted consultant at Istinye University Medical Park Gaziosmanpaşa Hospital. He completed his medical education at Ege University Faculty of Medicine in 2007 and specialized at Yüzüncü Yıl University Faculty of Medicine in 2013.",
+      "highlight1": "23 years of clinical experience",
+      "highlight2": "50+ international scientific publications",
+      "highlight3": "Robotic surgery specialist",
+      "highlight4": "Advanced laparoscopic surgery",
+      "highlight5": "Gynecological oncology experience",
+      "highlight6": "High-risk pregnancy management",
+      "yearsExperience": "Years Experience"
+    },
+    "whyChooseUs": {
+      "badge": "Why Us?",
+      "title": "Why Assoc. Prof. Dr. Erkan Elçi?",
+      "reason1Title": "23 Years of Experience",
+      "reason1Desc": "Extensive clinical experience in obstetrics and gynecology",
+      "reason2Title": "Advanced Technology",
+      "reason2Desc": "Robotic surgery and advanced laparoscopic surgery capabilities",
+      "reason3Title": "Academic Expertise",
+      "reason3Desc": "Over 50 international scientific publications and research",
+      "reason4Title": "Patient-Centered Approach",
+      "reason4Desc": "Personalized treatment plans tailored to each patient"
+    },
+    "faq": {
+      "q1": "How can I book an appointment?",
+      "a1": "You can call us at +90 530 403 69 77 or reach us via WhatsApp to book an appointment. You can also use the contact form on our website.",
+      "q2": "What is the consultation fee?",
+      "a2": "Please contact us for current information about consultation fees. We have a Social Security agreement.",
+      "q3": "What is robotic surgery and what are its advantages?",
+      "a3": "Robotic surgery is a minimally invasive surgical method performed by the surgeon through robotic arms. It has advantages such as less pain, less bleeding, smaller incisions, faster recovery and less scarring.",
+      "q4": "How long is the recovery period after surgery?",
+      "a4": "While the recovery period varies depending on the type of surgery, with laparoscopic and robotic surgical methods, patients can generally return to daily activities within 1-2 weeks.",
+      "q5": "Do you offer online consultations?",
+      "a5": "Yes, we offer online video consultation for our patients coming from abroad or other cities. Please contact us for an appointment.",
+      "q6": "Which hospital do you work at?",
+      "a6": "I practice at Istinye University Medical Park Gaziosmanpaşa Hospital. Address: Küçükbakkalköy, Allianz Tower, Kayışdağı Cd. No:1 Floor: 21, 22, Istanbul."
+    }
+  }
+}

@@ -4,12 +4,15 @@ import { Disease } from "@/data/diseases";
 import { contactInfo } from "@/data/contact";
 import { FiPhone, FiCheckCircle } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function DiseasePageLayout({
   disease,
 }: {
   disease: Disease;
 }) {
+  const t = useTranslations("common");
+
   const breadcrumbItems = [];
   if (disease.parentSlug && disease.parentTitle) {
     breadcrumbItems.push({
@@ -68,7 +71,7 @@ export default function DiseasePageLayout({
               {disease.symptoms && disease.symptoms.length > 0 && (
                 <div className="bg-primary-50 rounded-2xl p-8">
                   <h2 className="text-2xl font-bold text-dark mb-6">
-                    Belirtiler
+                    {t("symptoms")}
                   </h2>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {disease.symptoms.map((symptom, idx) => (
@@ -88,7 +91,7 @@ export default function DiseasePageLayout({
               {disease.faqs.length > 0 && (
                 <div>
                   <h2 className="text-2xl font-bold text-dark mb-6">
-                    Sık Sorulan Sorular
+                    {t("faq")}
                   </h2>
                   <div className="space-y-4">
                     {disease.faqs.map((faq, idx) => (
@@ -114,11 +117,10 @@ export default function DiseasePageLayout({
               {/* CTA */}
               <div className="gradient-primary rounded-2xl p-8 text-white text-center">
                 <h3 className="text-2xl font-bold mb-3">
-                  Randevu Almak İster Misiniz?
+                  {t("makeAnAppointment")}
                 </h3>
                 <p className="text-white/80 mb-6">
-                  {disease.title} hakkında detaylı bilgi ve muayene için
-                  bizimle iletişime geçin.
+                  {t("aboutDisease", { title: disease.title })}
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
@@ -126,7 +128,7 @@ export default function DiseasePageLayout({
                     className="btn-secondary flex items-center gap-2"
                   >
                     <FiPhone className="w-4 h-4" />
-                    Hemen Ara
+                    {t("callNow")}
                   </a>
                   <a
                     href={contactInfo.whatsapp}
@@ -135,7 +137,7 @@ export default function DiseasePageLayout({
                     className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-xl hover:bg-green-600 transition-all"
                   >
                     <FaWhatsapp className="w-4 h-4" />
-                    WhatsApp
+                    {t("whatsapp")}
                   </a>
                 </div>
               </div>

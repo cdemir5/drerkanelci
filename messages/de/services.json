@@ -1,0 +1,58 @@
+{
+  "services": {
+    "roboticSurgery": {
+      "title": "Roboterchirurgie",
+      "metaTitle": "Roboterchirurgie | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Minimalinvasive Operationen mit Roboterchirurgie. Weniger Schmerzen, schnellere Genesung. Facharzt in Istanbul.",
+      "description": "Minimalinvasive Operationen mit modernsten Roboterchirurgiesystemen. Weniger Schmerzen, schnellere Genesung."
+    },
+    "infertility": {
+      "title": "Unfruchtbarkeitsbehandlung",
+      "metaTitle": "Unfruchtbarkeitsbehandlung | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Moderne Ansätze in der Unfruchtbarkeitsbehandlung. IVF, IUI und chirurgische Behandlungsmöglichkeiten.",
+      "description": "Personalisierte Ansätze und moderne Behandlungsmethoden bei Unfruchtbarkeit."
+    },
+    "highRiskPregnancy": {
+      "title": "Risikoschwangerschaften",
+      "metaTitle": "Risikoschwangerschaft Betreuung | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Überwachung und Management von Risikoschwangerschaften. Sichere Schwangerschaft mit 23 Jahren Erfahrung.",
+      "description": "Sichere Ergebnisse mit 23 Jahren Erfahrung in der Überwachung und Betreuung von Risikoschwangerschaften."
+    },
+    "advancedLaparoscopy": {
+      "title": "Fortgeschrittene Laparoskopische Chirurgie",
+      "metaTitle": "Fortgeschrittene Laparoskopische Chirurgie | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Minimalinvasive Behandlung mit fortgeschrittener laparoskopischer Chirurgie. Endometriose-, Myom- und Zystenoperationen.",
+      "description": "Minimalinvasive Behandlungsmöglichkeiten mit fortgeschrittenen laparoskopischen Chirurgietechniken."
+    },
+    "hysteroscopicSurgery": {
+      "title": "Hysteroskopische Chirurgie",
+      "metaTitle": "Hysteroskopische Chirurgie | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Intrauterine Eingriffe mit hysteroskopischer Chirurgie. Polypen-, Myom- und Septumbehandlung.",
+      "description": "Hysteroskopische Chirurgie zur Diagnose und Behandlung intrauteriner Pathologien."
+    },
+    "pregnancyBirth": {
+      "title": "Schwangerschaft und Geburt",
+      "metaTitle": "Schwangerschaftsbetreuung und Geburt | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Schwangerschaftsbetreuung und sichere Entbindung. Natürliche Geburt und Kaiserschnitt.",
+      "description": "Umfassende Betreuung während der Schwangerschaft und sichere Entbindungsleistungen."
+    },
+    "gynecology": {
+      "title": "Gynäkologie",
+      "metaTitle": "Gynäkologie | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Diagnose und Behandlung gynäkologischer Erkrankungen. Gynäkologische Untersuchung und Behandlungsleistungen.",
+      "description": "Umfassende gynäkologische Leistungen in allen Bereichen der Frauengesundheit."
+    },
+    "urogynecology": {
+      "title": "Urogynäkologie",
+      "metaTitle": "Urogynäkologie | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Behandlung von Harninkontinenz und Beckenbodenstörungen. Urogynäkologie-Spezialist.",
+      "description": "Fachkundiger Ansatz bei der Behandlung von Harninkontinenz und Beckenbodenstörungen."
+    },
+    "vnotes": {
+      "title": "vNOTES",
+      "metaTitle": "vNOTES Chirurgie | Assoz. Prof. Dr. Erkan Elçi",
+      "metaDescription": "Narbenfreie Chirurgie mit vNOTES. Natürliche Öffnungschirurgie über den vaginalen Weg.",
+      "description": "Vaginale Natural Orifice Transluminale Endoskopische Chirurgie (vNOTES)."
+    }
+  }
+}

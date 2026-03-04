@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { FiChevronLeft, FiChevronRight, FiExternalLink } from "react-icons/fi";
 import { FaStar, FaGoogle } from "react-icons/fa";
 import {
@@ -16,6 +17,7 @@ interface Props {
 
 export default function Testimonials({ googleData }: Props) {
   const [current, setCurrent] = useState(0);
+  const t = useTranslations("common");
 
   const reviews = googleData?.reviews ?? fallbackTestimonials;
   const rating = googleData?.rating ?? fallbackRating.score;
@@ -30,13 +32,12 @@ export default function Testimonials({ googleData }: Props) {
       <div className="container-custom">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary text-sm font-medium rounded-full mb-4">
-            Google Hasta Yorumları
+            {t("googlePatientReviews")}
           </span>
-          <h2 className="section-title">Hastalarımız Ne Diyor?</h2>
+          <h2 className="section-title">{t("whatPatientsSay")}</h2>
           <p className="section-subtitle">
-            Google Maps üzerinden hastalarımızın değerli görüşleri
+            {t("patientOpinions")}
           </p>
-          {/* Google Rating Badge */}
           <a
             href={contactInfo.mapLink}
             target="_blank"
@@ -53,19 +54,18 @@ export default function Testimonials({ googleData }: Props) {
               </div>
             </div>
             <span className="text-sm text-gray-500">
-              {totalReviews} Google Yorumu
+              {totalReviews} {t("googleReview")}
             </span>
             <FiExternalLink className="w-3.5 h-3.5 text-gray-400" />
           </a>
         </div>
 
         <div className="max-w-3xl mx-auto relative">
-          {/* Testimonial Card */}
           <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12 text-center">
             <div className="flex justify-center items-center gap-2 mb-4">
               <FaGoogle className="w-4 h-4 text-[#4285F4]" />
               <span className="text-xs text-gray-400 font-medium">
-                Google Yorumu
+                {t("googleReview")}
               </span>
             </div>
             <div className="flex justify-center gap-1 mb-6">
@@ -84,7 +84,6 @@ export default function Testimonials({ googleData }: Props) {
             </div>
           </div>
 
-          {/* Navigation */}
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
@@ -113,7 +112,6 @@ export default function Testimonials({ googleData }: Props) {
             </button>
           </div>
 
-          {/* Google Maps CTA */}
           <div className="text-center mt-8">
             <a
               href={contactInfo.mapLink}
@@ -121,7 +119,7 @@ export default function Testimonials({ googleData }: Props) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium transition-colors"
             >
-              Tüm Google Yorumlarını Gör
+              {t("allGoogleReviews")}
               <FiExternalLink className="w-4 h-4" />
             </a>
           </div>

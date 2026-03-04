@@ -1,11 +1,23 @@
 "use client";
 
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FiCalendar } from "react-icons/fi";
 import { contactInfo } from "@/data/contact";
+import { Link } from "@/i18n/routing";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-center">
+      <LanguageSwitcher />
+      <Link
+        href="/iletisim"
+        className="bg-primary rounded-full flex items-center gap-2 px-4 py-3 text-white shadow-lg hover:bg-primary-700 hover:scale-105 transition-all duration-300"
+        aria-label="Randevu Al"
+      >
+        <FiCalendar className="w-5 h-5" />
+        <span className="text-sm font-semibold whitespace-nowrap">Randevu Al</span>
+      </Link>
       <a
         href={contactInfo.social.instagram}
         target="_blank"

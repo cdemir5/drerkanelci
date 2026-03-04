@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { FiChevronRight, FiHome } from "react-icons/fi";
 
 interface BreadcrumbItem {
@@ -7,6 +10,8 @@ interface BreadcrumbItem {
 }
 
 export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
+  const t = useTranslations("common");
+
   return (
     <nav className="flex items-center gap-2 text-sm text-gray-500 flex-wrap">
       <Link
@@ -14,14 +19,14 @@ export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
         className="hover:text-primary transition-colors flex items-center gap-1"
       >
         <FiHome className="w-3.5 h-3.5" />
-        <span>Anasayfa</span>
+        <span>{t("home")}</span>
       </Link>
       {items.map((item, index) => (
         <span key={index} className="flex items-center gap-2">
           <FiChevronRight className="w-3.5 h-3.5 text-gray-400" />
           {item.href ? (
             <Link
-              href={item.href}
+              href={item.href as any}
               className="hover:text-primary transition-colors"
             >
               {item.label}

@@ -1,0 +1,32 @@
+{
+  "contact": {
+    "title": "Контакты",
+    "subtitle": "Свяжитесь с нами для записи на приём или по вашим вопросам.",
+    "phone": "Телефон",
+    "email": "Эл. почта",
+    "workingHours": "Часы Работы",
+    "socialMedia": "Социальные Сети",
+    "writeToUs": "Напишите Нам",
+    "fullName": "Полное Имя",
+    "fullNamePlaceholder": "Ваше полное имя",
+    "emailPlaceholder": "example@email.com",
+    "phonePlaceholder": "+7 XXX XXX XX XX",
+    "subject": "Тема",
+    "selectSubject": "Выберите Тему",
+    "appointmentRequest": "Запись на Приём",
+    "infoRequest": "Запрос Информации",
+    "onlineConsultation": "Онлайн Консультация",
+    "other": "Другое",
+    "message": "Ваше Сообщение",
+    "messagePlaceholder": "Напишите ваше сообщение...",
+    "send": "Отправить",
+    "messageSent": "Сообщение Получено!",
+    "messageSuccess": "Мы свяжемся с вами в ближайшее время.",
+    "weekdays": "Понедельник - Пятница",
+    "saturday": "Суббота",
+    "sunday": "Воскресенье",
+    "closed": "Закрыто",
+    "locationMap": "Карта Местоположения",
+    "openInGoogleMaps": "Открыть в Google Maps"
+  }
+}

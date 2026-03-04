@@ -1,0 +1,30 @@
+{
+  "services": {
+    "badge": "Uzmanlık Alanları",
+    "title": "Tedavi ve Hizmetlerimiz",
+    "subtitle": "En son teknoloji ve 23 yıllık deneyim ile kapsamlı jinekolojik hizmetler sunuyoruz.",
+    "roboticSurgery": "Robotik Cerrahi",
+    "roboticSurgeryDesc": "En son teknoloji robotik cerrahi sistemleri ile minimal invaziv ameliyatlar. Daha az ağrı, daha hızlı iyileşme.",
+    "gynecologicOncology": "Jinekolojik Onkoloji",
+    "gynecologicOncologyDesc": "Kadın üreme sistemi kanserlerinin teşhis ve tedavisinde uzman cerrahi yaklaşım.",
+    "fibroidTreatment": "Miyom Tedavisi",
+    "fibroidTreatmentDesc": "İzsiz miyom ameliyatı dahil modern tedavi yöntemleri ile miyom problemlerine çözüm.",
+    "endometriosis": "Endometriozis",
+    "endometriosisDesc": "Endometriozis ve çikolata kisti tedavisinde ileri laparoskopik cerrahi deneyimi.",
+    "highRiskPregnancy": "Yüksek Riskli Gebelik",
+    "highRiskPregnancyDesc": "Riskli gebeliklerin takibi ve yönetiminde 23 yıllık deneyim ile güvenli sonuçlar.",
+    "hpvColposcopy": "HPV / Kolposkopi",
+    "hpvColposcopyDesc": "HPV teşhis ve tedavisi, kolposkopi ile erken tanı ve koruyucu yaklaşımlar.",
+    "whyUsBadge": "Neden Biz?",
+    "whyUsTitle": "Neden Doç. Dr. Erkan Elçi?",
+    "whyUsSubtitle": "Sağlığınız için doğru tercihi yapmanızda size yardımcı oluyoruz",
+    "whyUs1Title": "23 Yıllık Deneyim",
+    "whyUs1Desc": "Kadın hastalıkları ve doğum alanında geniş klinik tecrübe",
+    "whyUs2Title": "İleri Teknoloji",
+    "whyUs2Desc": "Robotik cerrahi ve ileri laparoskopik cerrahi imkanları",
+    "whyUs3Title": "Akademik Uzmanlık",
+    "whyUs3Desc": "50'nin üzerinde uluslararası bilimsel yayın ve araştırma",
+    "whyUs4Title": "Hasta Odaklı Yaklaşım",
+    "whyUs4Desc": "Her hastaya özel, kişiselleştirilmiş tedavi planları"
+  }
+}

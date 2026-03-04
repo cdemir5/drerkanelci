@@ -1,17 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { navigation, NavItem } from "@/data/navigation";
 import Logo from "@/components/Logo";
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const t = useTranslations("common");
+  const tNav = useTranslations("navigation");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -41,22 +44,15 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
           {navigation.map((item) => (
-            <NavItemComponent key={item.href} item={item} pathname={pathname} />
+            <NavItemComponent key={item.href} item={item} pathname={pathname} t={tNav} />
           ))}
         </nav>
-
-        {/* Right Side */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Link href="/iletisim" className="btn-primary text-sm !px-5 !py-2.5">
-            Randevu Al
-          </Link>
-        </div>
 
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           className="lg:hidden p-2 text-dark"
-          aria-label="Menü"
+          aria-label={t("menu")}
         >
           {isMobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
@@ -72,16 +68,9 @@ export default function Header() {
                 item={item}
                 openDropdown={openDropdown}
                 setOpenDropdown={setOpenDropdown}
+                t={tNav}
               />
             ))}
-            <div className="pt-4 border-t mt-4">
-              <Link
-                href="/iletisim"
-                className="btn-primary w-full text-center text-sm"
-              >
-                Randevu Al
-              </Link>
-            </div>
           </nav>
         </div>
       )}
@@ -92,11 +81,14 @@ export default function Header() {
 function NavItemComponent({
   item,
   pathname,
+  t,
 }: {
   item: NavItem;
   pathname: string;
+  t: (key: string) => string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const label = t(item.labelKey);
   const isActive =
     pathname === item.href ||
     item.children?.some((c) => pathname === c.href);
@@ -104,14 +96,14 @@ function NavItemComponent({
   if (!item.children) {
     return (
       <Link
-        href={item.href}
+        href={item.href as any}
         className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
           isActive
             ? "text-primary bg-primary-50"
             : "text-gray-700 hover:text-primary hover:bg-gray-50"
         }`}
       >
-        {item.label}
+        {label}
       </Link>
     );
   }
@@ -129,7 +121,7 @@ function NavItemComponent({
             : "text-gray-700 hover:text-primary hover:bg-gray-50"
         }`}
       >
-        {item.label}
+        {label}
         <FiChevronDown
           className={`w-3 h-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
         />
@@ -141,14 +133,14 @@ function NavItemComponent({
             {item.children.map((child) => (
               <Link
                 key={child.href}
-                href={child.href}
+                href={child.href as any}
                 className={`block px-4 py-2.5 text-sm transition-colors ${
                   pathname === child.href
                     ? "text-primary bg-primary-50"
                     : "text-gray-700 hover:text-primary hover:bg-gray-50"
                 }`}
               >
-                {child.label}
+                {t(child.labelKey)}
               </Link>
             ))}
           </div>
@@ -162,20 +154,23 @@ function MobileNavItem({
   item,
   openDropdown,
   setOpenDropdown,
+  t,
 }: {
   item: NavItem;
   openDropdown: string | null;
   setOpenDropdown: (v: string | null) => void;
+  t: (key: string) => string;
 }) {
-  const isOpen = openDropdown === item.label;
+  const label = t(item.labelKey);
+  const isOpen = openDropdown === item.labelKey;
 
   if (!item.children) {
     return (
       <Link
-        href={item.href}
+        href={item.href as any}
         className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg font-medium"
       >
-        {item.label}
+        {label}
       </Link>
     );
   }
@@ -183,10 +178,10 @@ function MobileNavItem({
   return (
     <div>
       <button
-        onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+        onClick={() => setOpenDropdown(isOpen ? null : item.labelKey)}
         className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg font-medium"
       >
-        {item.label}
+        {label}
         <FiChevronDown
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
         />
@@ -196,10 +191,10 @@ function MobileNavItem({
           {item.children.map((child) => (
             <Link
               key={child.href}
-              href={child.href}
+              href={child.href as any}
               className="block px-4 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg"
             >
-              {child.label}
+              {t(child.labelKey)}
             </Link>
           ))}
         </div>

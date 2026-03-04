@@ -1,0 +1,74 @@
+{
+  "home": {
+    "hero": {
+      "badge": "Kadın Hastalıkları ve Doğum Uzmanı",
+      "title1": "Doç. Dr.",
+      "title2": "Erkan Elçi",
+      "description": "23 yıllık deneyim ile robotik cerrahi, jinekolojik onkoloji, yüksek riskli gebelikler ve ileri laparoskopik cerrahi alanlarında uzman hizmet.",
+      "yearsExperience": "Yıl Deneyim",
+      "scientificPublications": "Bilimsel Yayın",
+      "surgeries": "Ameliyat"
+    },
+    "about": {
+      "badge": "Hakkımda",
+      "yearsExperience": "Yıl Deneyim",
+      "description": "Dr. Erkan Elçi, İstanbul'da yaşayan saygın bir Jinekolog ve Kadın Doğum uzmanıdır. İstinye Üniversitesi Medical Park Gaziosmanpaşa Hastanesi'nin güvenilir danışmanı olarak görev yapmaktadır. Tıp eğitimini 2007 yılında Ege Üniversitesi Tıp Fakültesi'nde tamamlamış, 2013 yılında Yüzüncü Yıl Tıp Fakültesi'nde uzmanlığını almıştır.",
+      "highlight1": "23 yıllık klinik deneyim",
+      "highlight2": "50+ uluslararası bilimsel yayın",
+      "highlight3": "Robotik cerrahi uzmanı",
+      "highlight4": "İleri laparoskopik cerrahi",
+      "highlight5": "Jinekolojik onkoloji deneyimi",
+      "highlight6": "Yüksek riskli gebelik yönetimi"
+    },
+    "services": {
+      "badge": "Uzmanlık Alanları",
+      "title": "Tedavi ve Hizmetlerimiz",
+      "subtitle": "En son teknoloji ve 23 yıllık deneyim ile kapsamlı jinekolojik hizmetler sunuyoruz.",
+      "roboticSurgery": "Robotik Cerrahi",
+      "roboticSurgeryDesc": "En son teknoloji robotik cerrahi sistemleri ile minimal invaziv ameliyatlar. Daha az ağrı, daha hızlı iyileşme.",
+      "gynecologicalOncology": "Jinekolojik Onkoloji",
+      "gynecologicalOncologyDesc": "Kadın üreme sistemi kanserlerinin teşhis ve tedavisinde uzman cerrahi yaklaşım.",
+      "fibroidTreatment": "Miyom Tedavisi",
+      "fibroidTreatmentDesc": "İzsiz miyom ameliyatı dahil modern tedavi yöntemleri ile miyom problemlerine çözüm.",
+      "endometriosis": "Endometriozis",
+      "endometriosisDesc": "Endometriozis ve çikolata kisti tedavisinde ileri laparoskopik cerrahi deneyimi.",
+      "highRiskPregnancy": "Yüksek Riskli Gebelik",
+      "highRiskPregnancyDesc": "Riskli gebeliklerin takibi ve yönetiminde 23 yıllık deneyim ile güvenli sonuçlar.",
+      "hpvColposcopy": "HPV / Kolposkopi",
+      "hpvColposcopyDesc": "HPV teşhis ve tedavisi, kolposkopi ile erken tanı ve koruyucu yaklaşımlar."
+    },
+    "whyChooseUs": {
+      "badge": "Neden Biz?",
+      "title": "Neden Doç. Dr. Erkan Elçi?",
+      "subtitle": "Sağlığınız için doğru tercihi yapmanızda size yardımcı oluyoruz",
+      "reason1Title": "23 Yıllık Deneyim",
+      "reason1Desc": "Kadın hastalıkları ve doğum alanında geniş klinik tecrübe",
+      "reason2Title": "İleri Teknoloji",
+      "reason2Desc": "Robotik cerrahi ve ileri laparoskopik cerrahi imkanları",
+      "reason3Title": "Akademik Uzmanlık",
+      "reason3Desc": "50'nin üzerinde uluslararası bilimsel yayın ve araştırma",
+      "reason4Title": "Hasta Odaklı Yaklaşım",
+      "reason4Desc": "Her hastaya özel, kişiselleştirilmiş tedavi planları"
+    },
+    "stats": {
+      "yearsExperience": "Yıl Deneyim",
+      "scientificPublications": "Bilimsel Yayın",
+      "successfulSurgeries": "Başarılı Ameliyat",
+      "happyPatients": "Mutlu Hasta"
+    },
+    "faq": {
+      "q1": "Randevu nasıl alabilirim?",
+      "a1": "Randevu almak için +90 530 403 69 77 numaralı telefonumuzu arayabilir veya WhatsApp üzerinden bize ulaşabilirsiniz. Ayrıca web sitemizdeki iletişim formunu da kullanabilirsiniz.",
+      "q2": "Muayene ücreti ne kadardır?",
+      "a2": "Muayene ücretleri hakkında güncel bilgi almak için lütfen bizimle iletişime geçiniz. SGK anlaşmamız bulunmaktadır.",
+      "q3": "Robotik cerrahi nedir ve avantajları nelerdir?",
+      "a3": "Robotik cerrahi, cerrahın robot kolları aracılığıyla gerçekleştirdiği minimal invaziv bir cerrahi yöntemdir. Daha az ağrı, daha az kanama, daha küçük kesi, daha hızlı iyileşme ve daha az iz bırakma gibi avantajları vardır.",
+      "q4": "Ameliyat sonrası ne kadar sürede iyileşirim?",
+      "a4": "İyileşme süresi ameliyatın türüne göre değişmekle birlikte, laparoskopik ve robotik cerrahi yöntemlerinde genellikle 1-2 hafta içinde günlük aktivitelere dönülebilir.",
+      "q5": "Online görüşme yapıyor musunuz?",
+      "a5": "Evet, yurt dışından veya şehir dışından gelen hastalarımız için online video görüşme imkanı sunmaktayız. Randevu için bize ulaşabilirsiniz.",
+      "q6": "Hangi hastanede çalışıyorsunuz?",
+      "a6": "İstinye Üniversitesi Medical Park Gaziosmanpaşa Hastanesi'nde hizmet vermekteyim. Adres: Küçükbakkalköy, Allianz Tower, Kayışdağı Cd. No:1 Kat: 21, 22, İstanbul."
+    }
+  }
+}

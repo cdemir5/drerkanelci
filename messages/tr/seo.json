@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "defaultTitle": "Doç. Dr. Erkan Elçi | Kadın Hastalıkları ve Doğum Uzmanı",
+    "titleTemplate": "%s | Doç. Dr. Erkan Elçi",
+    "defaultDescription": "Doç. Dr. Erkan Elçi - Kadın Hastalıkları ve Doğum Uzmanı. Robotik cerrahi, jinekolojik onkoloji, yüksek riskli gebelikler, ileri laparoskopik cerrahi. İstanbul.",
+    "miyomTitle": "Miyom Tedavisi",
+    "miyomDescription": "Miyom (fibroid) tedavisi hakkında bilgi. İzsiz miyom ameliyatı, laparoskopik ve robotik cerrahi yöntemleri.",
+    "endometriozisTitle": "Endometriozis Tedavisi",
+    "endometriozisDescription": "Endometriozis ve çikolata kisti tedavisi. Laparoskopik cerrahi ile modern tedavi yaklaşımları.",
+    "jinekolojikOnkolojiTitle": "Jinekolojik Onkoloji",
+    "jinekolojikOnkolojiDescription": "Kadın üreme sistemi kanserlerinin teşhis ve tedavisi. Jinekolojik onkoloji uzmanı.",
+    "genitalEstetikTitle": "Genital Estetik",
+    "genitalEstetikDescription": "Genital estetik ve labioplasti. Modern tekniklerle kadın genital estetik operasyonları.",
+    "hpvKolposkopiTitle": "HPV ve Kolposkopi",
+    "hpvKolposkopiDescription": "HPV teşhis ve tedavisi, kolposkopi, PAP smear. HPV aşılaması ve genital siğil tedavisi."
+  }
+}

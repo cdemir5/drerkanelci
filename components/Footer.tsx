@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
 import {
   FaFacebookF,
   FaInstagram,
@@ -8,11 +11,15 @@ import {
 } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { contactInfo } from "@/data/contact";
-import { getSidebarDiseases } from "@/data/diseases";
+import { getSidebarByLocale } from "@/data/getDiseaseData";
 import Logo from "@/components/Logo";
 
 export default function Footer() {
-  const diseases = getSidebarDiseases().slice(0, 8);
+  const t = useTranslations("common");
+  const tAbout = useTranslations("about");
+  const tNav = useTranslations("navigation");
+  const locale = useLocale();
+  const diseases = getSidebarByLocale(locale).slice(0, 8);
 
   return (
     <footer className="bg-dark text-gray-300">
@@ -25,9 +32,7 @@ export default function Footer() {
               <Logo size="small" />
             </div>
             <p className="text-sm leading-relaxed mb-6">
-              Kadın Hastalıkları ve Doğum Uzmanı. 23 yıllık deneyim ile
-              robotik cerrahi, jinekolojik onkoloji ve yüksek riskli
-              gebelikler alanlarında hizmet vermektedir.
+              {tAbout("footerDescription")}
             </p>
             <div className="flex gap-3">
               {[
@@ -53,23 +58,23 @@ export default function Footer() {
           {/* Column 2: Quick Links */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">
-              Hızlı Linkler
+              {t("quickLinks")}
             </h4>
             <ul className="space-y-2.5">
               {[
-                { label: "Anasayfa", href: "/" },
-                { label: "Hakkımda", href: "/hakkimda" },
-                { label: "Robotik Cerrahi", href: "/robotik-cerrahi" },
-                { label: "Kısırlık Tedavisi", href: "/kisirlik-tedavisi" },
-                { label: "Yüksek Riskli Gebelikler", href: "/yuksek-riskli-gebelikler" },
-                { label: "İletişim", href: "/iletisim" },
+                { labelKey: "home", href: "/" as const },
+                { labelKey: "about", href: "/hakkimda" as const },
+                { labelKey: "roboticSurgery", href: "/robotik-cerrahi" as const },
+                { labelKey: "infertility", href: "/kisirlik-tedavisi" as const },
+                { labelKey: "highRiskPregnancies", href: "/yuksek-riskli-gebelikler" as const },
+                { labelKey: "contact", href: "/iletisim" as const },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm hover:text-secondary transition-colors"
                   >
-                    {link.label}
+                    {tNav(link.labelKey)}
                   </Link>
                 </li>
               ))}
@@ -79,13 +84,13 @@ export default function Footer() {
           {/* Column 3: Diseases */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">
-              Hastalıklar
+              {t("diseases")}
             </h4>
             <ul className="space-y-2.5">
               {diseases.map((d) => (
                 <li key={d.href}>
                   <Link
-                    href={d.href}
+                    href={d.href as any}
                     className="text-sm hover:text-secondary transition-colors"
                   >
                     {d.title}
@@ -98,7 +103,7 @@ export default function Footer() {
           {/* Column 4: Contact */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">
-              İletişim
+              {t("contact")}
             </h4>
             {/* Map */}
             <a
@@ -114,11 +119,11 @@ export default function Footer() {
                 className="border-0 pointer-events-none"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Konum Haritası"
+                title={t("locationMap")}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                 <span className="opacity-0 group-hover:opacity-100 text-white text-sm font-medium bg-primary px-3 py-1.5 rounded-lg transition-opacity">
-                  Google Maps&apos;te Aç
+                  {t("openInGoogleMaps")}
                 </span>
               </div>
             </a>
@@ -163,12 +168,10 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Doç. Dr. Erkan Elçi. Tüm hakları
-            saklıdır. | <a href="mailto:cdemir5@hotmail.com" className="hover:text-secondary transition-colors">Designed by CDNET</a>
+            &copy; {new Date().getFullYear()} Doç. Dr. Erkan Elçi. {t("allRightsReserved")} | <a href="mailto:cdemir5@hotmail.com" className="hover:text-secondary transition-colors">{t("designedBy")}</a>
           </p>
           <p className="text-xs text-gray-500">
-            Bu sitedeki bilgiler genel bilgilendirme amaçlıdır. Tıbbi teşhis
-            ve tedavi için mutlaka doktorunuza başvurunuz.
+            {t("medicalDisclaimer")}
           </p>
         </div>
       </div>
