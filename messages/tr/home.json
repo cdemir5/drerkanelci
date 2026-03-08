@@ -12,12 +12,12 @@
     "about": {
       "badge": "Hakkımda",
       "yearsExperience": "Yıl Deneyim",
-      "description": "Dr. Erkan Elçi, İstanbul'da yaşayan saygın bir Jinekolog ve Kadın Doğum uzmanıdır. İstinye Üniversitesi Medical Park Gaziosmanpaşa Hastanesi'nin güvenilir danışmanı olarak görev yapmaktadır. Tıp eğitimini 2007 yılında Ege Üniversitesi Tıp Fakültesi'nde tamamlamış, 2013 yılında Yüzüncü Yıl Tıp Fakültesi'nde uzmanlığını almıştır.",
-      "highlight1": "23 yıllık klinik deneyim",
-      "highlight2": "50+ uluslararası bilimsel yayın",
-      "highlight3": "Robotik cerrahi uzmanı",
-      "highlight4": "İleri laparoskopik cerrahi",
-      "highlight5": "Jinekolojik onkoloji deneyimi",
+      "description": "Doç. Dr. Erkan Elçi, İstanbul'da görev yapan ve özellikle minimal invaziv jinekolojik cerrahi, jinekolojik kanser cerrahisi ve ileri laparoskopik ameliyatlar alanında deneyimli bir Kadın Hastalıkları ve Doğum uzmanıdır. Şu an Yeni Yüzyıl Üniversitesi Medicana Ataköy Hastanesi'nde görev almaktadır.",
+      "highlight1": "Minimal invaziv jinekolojik cerrahi",
+      "highlight2": "Jinekolojik kanser cerrahisi",
+      "highlight3": "Laparoskopik ve robotik cerrahi",
+      "highlight4": "vNOTES (izsiz cerrahi)",
+      "highlight5": "Endometriozis cerrahisi",
       "highlight6": "Yüksek riskli gebelik yönetimi"
     },
     "services": {
@@ -68,7 +68,7 @@
       "q5": "Online görüşme yapıyor musunuz?",
       "a5": "Evet, yurt dışından veya şehir dışından gelen hastalarımız için online video görüşme imkanı sunmaktayız. Randevu için bize ulaşabilirsiniz.",
       "q6": "Hangi hastanede çalışıyorsunuz?",
-      "a6": "İstinye Üniversitesi Medical Park Gaziosmanpaşa Hastanesi'nde hizmet vermekteyim. Adres: Küçükbakkalköy, Allianz Tower, Kayışdağı Cd. No:1 Kat: 21, 22, İstanbul."
+      "a6": "Yeni Yüzyıl Üniversitesi Medicana Ataköy Hastanesi'nde hizmet vermekteyim."
     }
   }
 }

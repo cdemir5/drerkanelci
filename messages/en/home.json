@@ -34,12 +34,12 @@
     },
     "about": {
       "badge": "About",
-      "description": "Dr. Erkan Elçi is a respected Gynecologist and Obstetrician based in Istanbul. He serves as a trusted consultant at Istinye University Medical Park Gaziosmanpaşa Hospital. He completed his medical education at Ege University Faculty of Medicine in 2007 and specialized at Yüzüncü Yıl University Faculty of Medicine in 2013.",
-      "highlight1": "23 years of clinical experience",
-      "highlight2": "50+ international scientific publications",
-      "highlight3": "Robotic surgery specialist",
-      "highlight4": "Advanced laparoscopic surgery",
-      "highlight5": "Gynecological oncology experience",
+      "description": "Assoc. Prof. Dr. Erkan Elçi is an Obstetrics and Gynecology specialist based in Istanbul, with extensive experience in minimally invasive gynecological surgery, gynecological cancer surgery and advanced laparoscopic operations. He currently works at Yeni Yüzyıl University Medicana Ataköy Hospital.",
+      "highlight1": "Minimally invasive gynecological surgery",
+      "highlight2": "Gynecological cancer surgery",
+      "highlight3": "Laparoscopic and robotic surgery",
+      "highlight4": "vNOTES (scarless surgery)",
+      "highlight5": "Endometriosis surgery",
       "highlight6": "High-risk pregnancy management",
       "yearsExperience": "Years Experience"
     },
@@ -67,7 +67,7 @@
       "q5": "Do you offer online consultations?",
       "a5": "Yes, we offer online video consultation for our patients coming from abroad or other cities. Please contact us for an appointment.",
       "q6": "Which hospital do you work at?",
-      "a6": "I practice at Istinye University Medical Park Gaziosmanpaşa Hospital. Address: Küçükbakkalköy, Allianz Tower, Kayışdağı Cd. No:1 Floor: 21, 22, Istanbul."
+      "a6": "I practice at Yeni Yüzyıl University Medicana Ataköy Hospital."
     }
   }
 }

@@ -8,7 +8,7 @@ import { FaGraduationCap, FaHospital, FaMedal } from "react-icons/fa";
 export const metadata: Metadata = {
   title: "Hakkımda",
   description:
-    "Doç. Dr. Erkan Elçi - Kadın Hastalıkları ve Doğum Uzmanı. 23 yıllık deneyim, 50+ bilimsel yayın. Özgeçmiş ve uzmanlık alanları.",
+    "Doç. Dr. Erkan Elçi - Kadın Hastalıkları ve Doğum Uzmanı. Minimal invaziv jinekolojik cerrahi, jinekolojik kanser cerrahisi ve ileri laparoskopik ameliyatlar.",
 };
 
 const education = [
@@ -21,33 +21,40 @@ const education = [
   {
     year: "2007 - 2013",
     title: "Kadın Hastalıkları ve Doğum Uzmanlığı",
-    institution: "Yüzüncü Yıl Tıp Fakültesi",
+    institution: "YYÜ Tıp Fakültesi",
     icon: FaMedal,
   },
   {
-    year: "2013 - Günümüz",
+    year: "2018",
+    title: "Başasistanlık",
+    institution: "Ümraniye Eğitim Araştırma Hastanesi",
+    icon: FaHospital,
+  },
+  {
+    year: "2021",
+    title: "Doçent Unvanı",
+    institution: "Kadın Hastalıkları ve Doğum",
+    icon: FaMedal,
+  },
+  {
+    year: "Günümüz",
     title: "Kadın Hastalıkları ve Doğum Uzmanı - Doçent",
-    institution: "",
+    institution: "Yeni Yüzyıl Üniversitesi Medicana Ataköy Hastanesi",
     icon: FaHospital,
   },
 ];
 
 const specialties = [
-  "Robotik Cerrahi",
-  "Kısırlık (İnfertilite)",
-  "Yüksek Riskli Gebelikler",
-  "İleri Laparoskopik Cerrahi",
-  "Histeroskopi",
-  "Jinekoloji - Onkoloji",
-  "Üçüz Gebelik",
-  "Gebeliğe Bağlı Hipertansiyon",
-  "Gestasyonel Diyabet",
-  "Ağrılı Adet (Dismenore)",
-  "Kistektomi",
-  "Miyom Tedavisi",
-  "Endometriozis",
-  "HPV / Kolposkopi",
-  "Genital Estetik",
+  "Laparoskopik (kapalı) ve Robotik Jinekolojik Ameliyatlar",
+  "Kadın Kanserleri Cerrahisi",
+  "vNOTES (İzsiz Cerrahi)",
+  "Endometriozis (Çikolata Kisti) Cerrahisi",
+  "Myom Ameliyatı",
+  "Rahim ve Rahim Ağzı Kanseri Cerrahisi",
+  "Pelvik Organ Sarkması Ameliyatları",
+  "İdrar Kaçırma Cerrahisi",
+  "Genital Estetik Ameliyatları",
+  "Gebelik Takibi ve Yüksek Riskli Gebelik Yönetimi",
 ];
 
 export default function HakkimdaPage() {
@@ -84,23 +91,38 @@ export default function HakkimdaPage() {
 
             <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
               <p className="leading-relaxed">
-                Dr. Elçi, Robotik Cerrahi, Kısırlık, Yüksek Riskli Gebelikler,
-                İleri Laparoskopik Cerrahi, Histeroskopi, Jinekoloji – Onkoloji,
-                Üçüz Gebelik, Gebeliğe Bağlı Hipertansiyon, Gestasyonel Diyabet,
-                Ağrılı Adet ve Kistektomi gibi çok çeşitli alanlarda
-                uzmanlaşmıştır.
+                Doç. Dr. Erkan Elçi, İstanbul&apos;da görev yapan ve özellikle
+                minimal invaziv jinekolojik cerrahi, jinekolojik kanser cerrahisi
+                ve ileri laparoskopik ameliyatlar alanında deneyimli bir Kadın
+                Hastalıkları ve Doğum uzmanıdır.
               </p>
               <p className="leading-relaxed">
-                Tıp eğitimini 2007 yılında Ege Üniversitesi Tıp Fakültesi&apos;nde
-                tamamladı ve 2013 yılında Yüzüncü Yıl Tıp Fakültesi&apos;nde Kadın
-                Hastalıkları ve Doğum alanında uzmanlaştı.
+                Dr. Erkan Elçi, 2007 yılında Ege Üniversitesi Tıp
+                Fakültesi&apos;nden mezun olmuş, ardından YYÜ Tıp Fakültesi Kadın
+                Hastalıkları ve Doğum Anabilim Dalı&apos;nda uzmanlık eğitimini
+                tamamlamıştır. 2018 yılında başasistanlık kriterleri ile Ümraniye
+                Eğitim Araştırma Hastanesi&apos;ne atanmıştır. 2021 yılında Kadın
+                Hastalıkları ve Doğum alanında Doçent unvanını almıştır. Akademik
+                kariyerine İstinye Üniversite hastanelerinde ve Yeni Yüzyıl
+                Üniversitesi&apos;nde devam etmiştir.
               </p>
               <p className="leading-relaxed">
-                Dr. Elçi, 50&apos;nin üzerinde araştırma makalesi ile Kadın
-                Hastalıkları ve Doğum alanına önemli katkılarda bulunmuştur.
-                Saygın dergilerde yayınlanan çalışmaları ile akademik alanda da
-                tanınan Dr. Elçi, uzmanlığı ve özverisi ile çok sayıda ödül ve
-                tanınma kazanmıştır.
+                Meslek hayatı boyunca Van Bölge Eğitim Araştırma&apos;da klinik
+                sorumlu olarak, Haydarpaşa ve Ümraniye Eğitim ve Araştırma
+                Hastanelerinde Doçent doktor olarak görev yapmış, ileri cerrahi
+                teknikler ve kadın sağlığı alanında geniş klinik deneyim
+                kazanmıştır. Şu an Yeni Yüzyıl Üniversitesi Medicana Ataköy
+                Hastanesi&apos;nde görev almaktadır.
+              </p>
+              <p className="leading-relaxed">
+                Modern cerrahi teknikler sayesinde hastaların daha küçük kesi ile
+                ameliyat olması, daha hızlı iyileşmesi ve günlük yaşamlarına kısa
+                sürede dönmesi hedeflenmektedir.
+              </p>
+              <p className="leading-relaxed">
+                Doç. Dr. Erkan Elçi aynı zamanda bilimsel çalışmalar, akademik
+                yayınlar ve hasta bilgilendirme içerikleri ile kadın sağlığı
+                alanında bilgi paylaşımına aktif katkı sağlamaktadır.
               </p>
             </div>
           </div>
@@ -185,10 +207,9 @@ export default function HakkimdaPage() {
                   Bilimsel Yayınlar
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  50&apos;nin üzerinde araştırma makalesi saygın uluslararası ve
-                  ulusal tıp dergilerinde yayınlanmıştır. Jinekoloji ve
-                  obstetrik alanında güncel araştırmalara katkı sağlamaya devam
-                  etmektedir.
+                  Bilimsel çalışmalar, akademik yayınlar ve hasta bilgilendirme
+                  içerikleri ile kadın sağlığı alanında bilgi paylaşımına aktif
+                  katkı sağlamaktadır.
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-sm">
