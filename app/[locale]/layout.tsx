@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 type Props = {
   children: React.ReactNode;
@@ -188,6 +189,18 @@ export default async function LocaleLayout({ children, params }: Props) {
       <Footer />
       <WhatsAppButton />
       <Analytics />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16481808087"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-tag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-16481808087');
+        `}
+      </Script>
     </NextIntlClientProvider>
   );
 }
