@@ -1,4 +1,5 @@
 import "./globals.css";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,10 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <GoogleTagManager gtmId="GTM-T3GXV6LJ" />
+        {children}
+      </body>
     </html>
   );
 }
