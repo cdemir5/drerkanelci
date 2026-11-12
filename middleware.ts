@@ -21,6 +21,6 @@ export const config = {
   matcher: [
     // `admin` has its own (Turkish-only) layout; `.well-known` keeps
     // claude.ai's OAuth discovery probes from rendering localized pages.
-    "/((?!api|admin|\\.well-known|_next|_vercel|images|favicon.ico|robots.txt|sitemap.xml).*)",
+    "/((?!api|admin|\\.well-known|_next|_vercel|images|favicon.ico|icon.png|apple-icon.png|robots.txt|sitemap.xml).*)",
   ],
 };
