@@ -37,12 +37,12 @@ export default function Header() {
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <Logo size="small" />
+        <Link href="/" className="shrink-0">
+          <Logo size="header" />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        {/* Desktop Navigation: only from 1280px; the menu doesn't fit narrower. */}
+        <nav className="hidden xl:flex items-center gap-1">
           {navigation.map((item) => (
             <NavItemComponent key={item.href} item={item} pathname={pathname} t={tNav} />
           ))}
@@ -51,7 +51,7 @@ export default function Header() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="lg:hidden p-2 text-dark"
+          className="xl:hidden p-2 text-dark"
           aria-label={t("menu")}
         >
           {isMobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -60,7 +60,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileOpen && (
-        <div className="lg:hidden bg-white border-t shadow-xl">
+        <div className="xl:hidden bg-white border-t shadow-xl max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain">
           <nav className="container-custom py-4 space-y-1">
             {navigation.map((item) => (
               <MobileNavItem

@@ -5,8 +5,23 @@ export default function Logo({
   size = "default",
 }: {
   className?: string;
-  size?: "default" | "small" | "large";
+  size?: "default" | "small" | "large" | "header";
 }) {
+  // Header: logo cropped to its content (no white margins, correct aspect),
+  // so the fixed header stays ~108px tall and doesn't cover page headings.
+  if (size === "header") {
+    return (
+      <Image
+        src="/images/logo-header.png"
+        alt="Doç. Dr. Erkan Elçi Logo"
+        width={217}
+        height={240}
+        className={`h-[100px] w-auto ${className}`}
+        priority
+      />
+    );
+  }
+
   const dimensions = {
     small: { w: 190, h: 190 },
     default: { w: 220, h: 220 },

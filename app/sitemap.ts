@@ -1,47 +1,47 @@
 import { MetadataRoute } from "next";
-import { locales, defaultLocale, type Locale } from "@/i18n/config";
+import { locales, defaultLocale } from "@/i18n/config";
 import { routing } from "@/i18n/routing";
-import { slugMap, categorySubPages } from "@/i18n/slugs";
 import { getPublishedPosts, getSitemapPosts } from "@/lib/blog/queries";
 import { SITE_URL, blogPath } from "@/lib/site";
+import { localizedPath } from "@/lib/seo";
 
 // Rendered per request: Next 14 does not apply revalidateTag to cached route
 // handlers, only to pages. The blog queries are still served from the data
 // cache (tag "blog"), so this stays cheap and is fresh right after a publish.
 export const dynamic = "force-dynamic";
 
-const baseUrl = SITE_URL;
+type Entry = MetadataRoute.Sitemap[number];
 
-// Category parent paths (TR key → routing pathname key)
-const categoryPaths: Record<string, string> = {
-  miyom: "/miyom",
-  endometriozis: "/endometriozis",
-  "jinekolojik-onkoloji": "/jinekolojik-onkoloji",
-  "genital-estetik": "/genital-estetik",
-  "hpv-kolposkopi": "/hpv-kolposkopi",
-};
-
-function getLocalizedPath(pathnameKey: string, locale: Locale): string {
-  const pathConfig = (routing.pathnames as Record<string, any>)[pathnameKey];
-  if (!pathConfig) return pathnameKey;
-  if (typeof pathConfig === "string") return pathConfig;
-  return pathConfig[locale] ?? pathConfig.tr ?? pathnameKey;
+function settingsFor(internalPath: string): Pick<Entry, "priority" | "changeFrequency"> {
+  if (internalPath === "/") return { priority: 1, changeFrequency: "weekly" };
+  const isSubPage = internalPath.split("/").length > 2; // "/miyom/miyom-nedir"
+  return isSubPage
+    ? { priority: 0.6, changeFrequency: "monthly" }
+    : { priority: 0.8, changeFrequency: "monthly" };
 }
 
-function buildUrl(locale: Locale, path: string): string {
-  const prefix = locale === defaultLocale ? "" : `/${locale}`;
-  return `${baseUrl}${prefix}${path}`;
-}
+/**
+ * Every static route in i18n/routing.ts, in every language, using exactly the
+ * same URLs as the pages' canonical tags (lib/seo.ts).
+ */
+function pageEntries(): MetadataRoute.Sitemap {
+  const internalPaths = Object.keys(routing.pathnames).filter(
+    (path) => !path.includes("[") && !path.startsWith("/blog")
+  );
 
-function buildAlternates(
-  getPath: (locale: Locale) => string
-): Record<string, string> {
-  const alternates: Record<string, string> = {};
-  for (const locale of locales) {
-    const key = locale === defaultLocale ? "tr" : locale;
-    alternates[key] = buildUrl(locale, getPath(locale));
+  const entries: MetadataRoute.Sitemap = [];
+  for (const path of internalPaths) {
+    const languages: Record<string, string> = {};
+    for (const locale of locales) {
+      languages[locale] = SITE_URL + localizedPath(path, locale);
+    }
+    languages["x-default"] = languages[defaultLocale];
+
+    for (const locale of locales) {
+      entries.push({ url: languages[locale], ...settingsFor(path), alternates: { languages } });
+    }
   }
-  return alternates;
+  return entries;
 }
 
 async function blogEntries(): Promise<MetadataRoute.Sitemap> {
@@ -51,16 +51,17 @@ async function blogEntries(): Promise<MetadataRoute.Sitemap> {
   const listLanguages: Record<string, string> = {};
   for (const locale of locales) {
     if (locale === defaultLocale || (await getPublishedPosts(locale)).length > 0) {
-      listLanguages[locale] = `${baseUrl}${blogPath(locale)}`;
+      listLanguages[locale] = `${SITE_URL}${blogPath(locale)}`;
     }
   }
-  entries.push({
-    url: `${baseUrl}${blogPath(defaultLocale)}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.7,
-    alternates: { languages: listLanguages },
-  });
+  for (const url of Object.values(listLanguages)) {
+    entries.push({
+      url,
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: listLanguages },
+    });
+  }
 
   // Posts: one entry per published language version, with its siblings.
   const posts = await getSitemapPosts();
@@ -70,11 +71,11 @@ async function blogEntries(): Promise<MetadataRoute.Sitemap> {
   }
   for (const versions of Array.from(byPost.values())) {
     const languages = Object.fromEntries(
-      versions.map((v) => [v.locale, `${baseUrl}${blogPath(v.locale, v.slug)}`])
+      versions.map((v) => [v.locale, `${SITE_URL}${blogPath(v.locale, v.slug)}`])
     );
     for (const version of versions) {
       entries.push({
-        url: `${baseUrl}${blogPath(version.locale, version.slug)}`,
+        url: `${SITE_URL}${blogPath(version.locale, version.slug)}`,
         lastModified: new Date(version.lastModified),
         changeFrequency: "monthly",
         priority: 0.6,
@@ -87,89 +88,5 @@ async function blogEntries(): Promise<MetadataRoute.Sitemap> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const entries: MetadataRoute.Sitemap = [];
-
-  // Standalone pages (no sub-slugs)
-  const standaloneKeys = [
-    "/",
-    "/hakkimda",
-    "/iletisim",
-    "/videolar",
-    "/robotik-cerrahi",
-    "/kisirlik-tedavisi",
-    "/yuksek-riskli-gebelikler",
-    "/ileri-laparoskopik-cerrahi",
-    "/histeroskopik-cerrahi",
-    "/gebelik-dogum",
-    "/jinekoloji",
-    "/urojinekoloji",
-    "/vnotes",
-  ];
-
-  for (const key of standaloneKeys) {
-    const priority = key === "/" ? 1 : 0.8;
-    const changeFrequency = key === "/" ? "weekly" : "monthly";
-
-    entries.push({
-      url: buildUrl(defaultLocale, getLocalizedPath(key, defaultLocale)),
-      lastModified: new Date(),
-      changeFrequency,
-      priority,
-      alternates: {
-        languages: buildAlternates((locale) =>
-          getLocalizedPath(key, locale)
-        ),
-      },
-    });
-  }
-
-  // Category parent pages
-  for (const [, pathKey] of Object.entries(categoryPaths)) {
-    entries.push({
-      url: buildUrl(
-        defaultLocale,
-        getLocalizedPath(pathKey, defaultLocale)
-      ),
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: buildAlternates((locale) =>
-          getLocalizedPath(pathKey, locale)
-        ),
-      },
-    });
-  }
-
-  // Category sub-pages
-  for (const [category, subPages] of Object.entries(categorySubPages)) {
-    const parentPathKey = categoryPaths[category];
-    if (!parentPathKey) continue;
-
-    for (const subKey of subPages) {
-      const slugEntry = slugMap[subKey];
-      if (!slugEntry) continue;
-
-      entries.push({
-        url: buildUrl(
-          defaultLocale,
-          `${getLocalizedPath(parentPathKey, defaultLocale)}/${slugEntry.tr}`
-        ),
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.6,
-        alternates: {
-          languages: buildAlternates((locale) => {
-            const parentPath = getLocalizedPath(parentPathKey, locale);
-            const subSlug = slugEntry[locale] ?? slugEntry.tr;
-            return `${parentPath}/${subSlug}`;
-          }),
-        },
-      });
-    }
-  }
-
-  entries.push(...(await blogEntries()));
-
-  return entries;
+  return [...pageEntries(), ...(await blogEntries())];
 }

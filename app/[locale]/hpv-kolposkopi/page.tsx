@@ -6,11 +6,12 @@ import { getCategoryByLocale } from "@/data/categories";
 import { getDiseasesByLocale } from "@/data/getDiseaseData";
 import { FiArrowRight } from "react-icons/fi";
 import { setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const disease = getDiseasesByLocale(locale)["hpv-kolposkopi"];
-  return { title: disease.metaTitle, description: disease.metaDescription };
+  return pageMetadata({ locale, path: "/hpv-kolposkopi", title: disease.metaTitle, description: disease.metaDescription });
 }
 
 export default async function HpvKolposkopiPage({ params }: { params: Promise<{ locale: string }> }) {

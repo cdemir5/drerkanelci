@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 import { PHYSICIAN_ID, SITE_URL } from "@/lib/site";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 type Props = {
   children: React.ReactNode;
@@ -64,15 +65,9 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(SITE_URL),
-    alternates: {
-      canonical: "/",
-      languages: {
-        tr: "/",
-        en: "/en",
-        de: "/de",
-        ru: "/ru",
-      },
-    },
+    // No `alternates` here: every page sets its own canonical/hreflang
+    // (lib/seo.ts). A canonical in the layout would be inherited by every
+    // page and point them all at the home page.
     title: titles[locale] || titles.tr,
     description: descriptions[locale] || descriptions.tr,
     keywords: [
@@ -96,19 +91,11 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: ogLocales[locale] || "tr_TR",
-      url: SITE_URL,
       siteName: "Doç. Dr. Erkan Elçi",
       title:
         titles[locale]?.default || titles.tr.default,
       description: descriptions[locale] || descriptions.tr,
-      images: [
-        {
-          url: "/images/dr-erkan-elci.jpg",
-          width: 1200,
-          height: 630,
-          alt: "Doç. Dr. Erkan Elçi",
-        },
-      ],
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
@@ -117,9 +104,10 @@ export async function generateMetadata({
       description: descriptions[locale] || descriptions.tr,
       images: ["/images/dr-erkan-elci.jpg"],
     },
-    verification: {
-      google: "GOOGLE_SITE_VERIFICATION_KODU",
-    },
+    // Google Search Console HTML-tag verification code (optional).
+    ...(process.env.GOOGLE_SITE_VERIFICATION && {
+      verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+    }),
   };
 }
 

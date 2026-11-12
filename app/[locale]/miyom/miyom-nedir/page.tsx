@@ -1,13 +1,14 @@
 import DiseasePageLayout from "@/components/DiseasePageLayout";
 import { getDiseasesByLocale } from "@/data/getDiseaseData";
 import { setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 
 const SLUG = "miyom-nedir";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const disease = getDiseasesByLocale(locale)[SLUG];
-  return { title: disease.metaTitle, description: disease.metaDescription };
+  return pageMetadata({ locale, path: "/miyom/miyom-nedir", title: disease.metaTitle, description: disease.metaDescription });
 }
 
 export default async function MiyomNedirPage({ params }: { params: Promise<{ locale: string }> }) {

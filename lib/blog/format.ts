@@ -15,11 +15,16 @@ export function formatDate(iso: string | null | undefined, locale: string): stri
   }).format(new Date(iso));
 }
 
-/** The layout's title template already appends the doctor's name. */
+// " | Doç. Dr. Erkan Elçi", " - Assoc. Prof. Erkan Elçi", " | Assoz. Prof. Dr. …",
+// " | Доц. Др. Эркан Эльчи", …
+const DOCTOR_NAME_SUFFIX =
+  /\s+[|–-]\s+(?:Doç|Doz|Assoz|Assoc|Prof|Dr|Доц|Проф|Др)\.[^|]*?(?:Elçi|Elci|Эльчи)/gi;
+
+/**
+ * The layout's title template already appends the doctor's name, so remove
+ * it from page titles: "Robotik Cerrahi | Doç. Dr. Erkan Elçi - İstanbul"
+ * → "Robotik Cerrahi - İstanbul". Titles that start with the name are kept.
+ */
 export function stripSiteSuffix(title: string): string {
-  const parts = title.split(/\s+[|–-]\s+/);
-  if (parts.length > 1 && /elçi|elci|эльчи/i.test(parts[parts.length - 1])) {
-    return parts.slice(0, -1).join(" | ").trim();
-  }
-  return title.trim();
+  return title.replace(DOCTOR_NAME_SUFFIX, "").trim() || title.trim();
 }

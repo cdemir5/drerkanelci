@@ -5,11 +5,12 @@ import ContactCTA from "@/components/ContactCTA";
 import { getCategoryByLocale } from "@/data/categories";
 import { FiArrowRight } from "react-icons/fi";
 import { setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const category = getCategoryByLocale(locale, "miyom")!;
-  return { title: category.metaTitle, description: category.metaDescription };
+  return pageMetadata({ locale, path: "/miyom", title: category.metaTitle, description: category.metaDescription });
 }
 
 export default async function MiyomPage({ params }: { params: Promise<{ locale: string }> }) {

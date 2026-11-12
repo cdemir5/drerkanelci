@@ -1,11 +1,17 @@
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import AboutContent from "@/components/AboutContent";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Hakkımda",
-  description:
-    "Doç. Dr. Erkan Elçi - Kadın Hastalıkları ve Doğum Uzmanı. Minimal invaziv jinekolojik cerrahi, jinekolojik kanser cerrahisi ve ileri laparoskopik ameliyatlar.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return pageMetadata({
+    locale,
+    path: "/hakkimda",
+    title: t("hakkimdaTitle"),
+    description: t("hakkimdaDescription"),
+  });
+}
 
 export default function HakkimdaPage() {
   return <AboutContent />;

@@ -9,8 +9,15 @@ import FAQ from "@/components/FAQ";
 import ContactCTA from "@/components/ContactCTA";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 import { faqs, googleRating } from "@/data/services";
+import { alternatesFor } from "@/lib/seo";
 
 export const revalidate = 86400; // 24 saat
+
+// Title/description/Open Graph come from the locale layout.
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return { alternates: alternatesFor("/", locale) };
+}
 
 export default async function Home() {
   const googleData = await fetchGoogleReviews();

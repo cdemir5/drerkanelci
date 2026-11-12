@@ -1,13 +1,19 @@
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Breadcrumb from "@/components/Breadcrumb";
 import ContactCTA from "@/components/ContactCTA";
 import VideoGallery from "@/components/VideoGallery";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Videolar",
-  description:
-    "Doç. Dr. Erkan Elçi'nin eğitici videoları. HPV, gebelik, miyom, laparoskopik cerrahi ve daha fazlası.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return pageMetadata({
+    locale,
+    path: "/videolar",
+    title: t("videolarTitle"),
+    description: t("videolarDescription"),
+  });
+}
 
 export default function VideolarPage() {
   return (

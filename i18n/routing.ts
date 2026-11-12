@@ -1,6 +1,56 @@
 import { defineRouting } from "next-intl/routing";
 import { createNavigation } from "next-intl/navigation";
-import { locales, defaultLocale } from "./config";
+import { locales, defaultLocale, type Locale } from "./config";
+import { slugMap, categorySubPages } from "./slugs";
+
+// Category paths per locale (internal key = Turkish folder name in app/[locale]).
+const categoryPaths = {
+  miyom: { tr: "/miyom", en: "/fibroid", de: "/myom", ru: "/mioma" },
+  endometriozis: {
+    tr: "/endometriozis",
+    en: "/endometriosis",
+    de: "/endometriose",
+    ru: "/endometrioz",
+  },
+  "jinekolojik-onkoloji": {
+    tr: "/jinekolojik-onkoloji",
+    en: "/gynecologic-oncology",
+    de: "/gynaekologische-onkologie",
+    ru: "/ginekologicheskaya-onkologiya",
+  },
+  "genital-estetik": {
+    tr: "/genital-estetik",
+    en: "/genital-aesthetics",
+    de: "/genital-aesthetik",
+    ru: "/genitalnaya-estetika",
+  },
+  "hpv-kolposkopi": {
+    tr: "/hpv-kolposkopi",
+    en: "/hpv-colposcopy",
+    de: "/hpv-kolposkopie",
+    ru: "/vpch-kolposkopiya",
+  },
+} as const satisfies Record<string, Record<Locale, string>>;
+
+/**
+ * One entry per category sub-page, e.g. "/miyom/miyom-nedir" →
+ * { en: "/fibroid/what-is-fibroid", de: "/myom/was-ist-myom", ... }, generated
+ * from i18n/slugs.ts. This makes the translated URLs resolve to the Turkish
+ * page folders, makes <Link href="/miyom/miyom-nedir"> render the translated
+ * URL, and lets the language switcher move between them.
+ */
+const subPagePathnames: Record<string, Record<Locale, string>> = {};
+for (const [category, keys] of Object.entries(categorySubPages)) {
+  const base = categoryPaths[category as keyof typeof categoryPaths];
+  if (!base) continue;
+  for (const key of keys) {
+    const slugs = slugMap[key];
+    if (!slugs) continue;
+    subPagePathnames[`${base.tr}/${slugs.tr}`] = Object.fromEntries(
+      locales.map((locale) => [locale, `${base[locale]}/${slugs[locale]}`])
+    ) as Record<Locale, string>;
+  }
+}
 
 export const routing = defineRouting({
   locales,
@@ -26,25 +76,22 @@ export const routing = defineRouting({
       de: "/videos",
       ru: "/video",
     },
-    // Miyom
-    "/miyom": {
-      tr: "/miyom",
-      en: "/fibroid",
-      de: "/myom",
-      ru: "/mioma",
-    },
+    // Category landing pages
+    "/miyom": categoryPaths.miyom,
+    "/endometriozis": categoryPaths.endometriozis,
+    "/jinekolojik-onkoloji": categoryPaths["jinekolojik-onkoloji"],
+    "/genital-estetik": categoryPaths["genital-estetik"],
+    "/hpv-kolposkopi": categoryPaths["hpv-kolposkopi"],
+    // Category sub-pages with translated slugs (see subPagePathnames above)
+    ...subPagePathnames,
+    // Fallbacks for old links that use the Turkish sub-slug under a
+    // translated category (e.g. /en/fibroid/miyom-nedir). Static entries above
+    // always match first; these keep such URLs working instead of 404.
     "/miyom/[subSlug]": {
       tr: "/miyom/[subSlug]",
       en: "/fibroid/[subSlug]",
       de: "/myom/[subSlug]",
       ru: "/mioma/[subSlug]",
-    },
-    // Endometriozis
-    "/endometriozis": {
-      tr: "/endometriozis",
-      en: "/endometriosis",
-      de: "/endometriose",
-      ru: "/endometrioz",
     },
     "/endometriozis/[subSlug]": {
       tr: "/endometriozis/[subSlug]",
@@ -52,38 +99,17 @@ export const routing = defineRouting({
       de: "/endometriose/[subSlug]",
       ru: "/endometrioz/[subSlug]",
     },
-    // Jinekolojik Onkoloji
-    "/jinekolojik-onkoloji": {
-      tr: "/jinekolojik-onkoloji",
-      en: "/gynecologic-oncology",
-      de: "/gynaekologische-onkologie",
-      ru: "/ginekologicheskaya-onkologiya",
-    },
     "/jinekolojik-onkoloji/[subSlug]": {
       tr: "/jinekolojik-onkoloji/[subSlug]",
       en: "/gynecologic-oncology/[subSlug]",
       de: "/gynaekologische-onkologie/[subSlug]",
       ru: "/ginekologicheskaya-onkologiya/[subSlug]",
     },
-    // Genital Estetik
-    "/genital-estetik": {
-      tr: "/genital-estetik",
-      en: "/genital-aesthetics",
-      de: "/genital-aesthetik",
-      ru: "/genitalnaya-estetika",
-    },
     "/genital-estetik/[subSlug]": {
       tr: "/genital-estetik/[subSlug]",
       en: "/genital-aesthetics/[subSlug]",
       de: "/genital-aesthetik/[subSlug]",
       ru: "/genitalnaya-estetika/[subSlug]",
-    },
-    // HPV Kolposkopi
-    "/hpv-kolposkopi": {
-      tr: "/hpv-kolposkopi",
-      en: "/hpv-colposcopy",
-      de: "/hpv-kolposkopie",
-      ru: "/vpch-kolposkopiya",
     },
     "/hpv-kolposkopi/[subSlug]": {
       tr: "/hpv-kolposkopi/[subSlug]",

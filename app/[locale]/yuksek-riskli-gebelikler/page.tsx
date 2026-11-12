@@ -1,13 +1,14 @@
 import DiseasePageLayout from "@/components/DiseasePageLayout";
 import { getDiseasesByLocale } from "@/data/getDiseaseData";
 import { setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 
 const SLUG = "yuksek-riskli-gebelikler";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const disease = getDiseasesByLocale(locale)[SLUG];
-  return { title: disease.metaTitle, description: disease.metaDescription };
+  return pageMetadata({ locale, path: "/yuksek-riskli-gebelikler", title: disease.metaTitle, description: disease.metaDescription });
 }
 
 export default async function YuksekRiskliGebeliklerPage({ params }: { params: Promise<{ locale: string }> }) {
