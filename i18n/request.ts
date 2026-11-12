@@ -19,6 +19,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...(await import(`../messages/${locale}/about.json`)).default,
       ...(await import(`../messages/${locale}/videos.json`)).default,
       ...(await import(`../messages/${locale}/seo.json`)).default,
+      ...(await import(`../messages/${locale}/blog.json`)).default,
     },
   };
 });

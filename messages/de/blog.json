@@ -1,0 +1,22 @@
+{
+  "blog": {
+    "title": "Blog",
+    "heading": "Blog zur Frauengesundheit",
+    "description": "Informative Beiträge zu Gynäkologie, Schwangerschaft und gynäkologischer Chirurgie, verfasst und medizinisch geprüft von Doz. Dr. Erkan Elçi.",
+    "metaTitle": "Blog - Beiträge zur Frauengesundheit",
+    "metaDescription": "Aktuelle Beiträge zu Myomen, Endometriose, HPV, Schwangerschaft und gynäkologischer Chirurgie, medizinisch geprüft von Doz. Dr. Erkan Elçi.",
+    "empty": "In dieser Sprache wurden noch keine Beiträge veröffentlicht. Bald verfügbar.",
+    "readMore": "Beitrag lesen",
+    "readingTime": "{minutes} Min. Lesezeit",
+    "publishedOn": "Veröffentlicht: {date}",
+    "updatedOn": "Aktualisiert: {date}",
+    "reviewedBy": "Medizinisch geprüft",
+    "author": "Doz. Dr. Erkan Elçi",
+    "authorTitle": "Facharzt für Gynäkologie und Geburtshilfe",
+    "aboutAuthor": "Über den Autor",
+    "faq": "Häufig gestellte Fragen",
+    "disclaimer": "Dieser Beitrag dient ausschließlich der allgemeinen Information und ersetzt keine Untersuchung, Diagnose oder Behandlung. Bitte wenden Sie sich bei Beschwerden an eine Ärztin oder einen Arzt.",
+    "previewBanner": "Vorschaumodus: Sie sehen einen unveröffentlichten Entwurf.",
+    "exitPreview": "Vorschau beenden"
+  }
+}

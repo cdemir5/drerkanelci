@@ -8,7 +8,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
+import { PHYSICIAN_ID } from "@/lib/site";
 
 type Props = {
   children: React.ReactNode;
@@ -124,6 +126,7 @@ export async function generateMetadata({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Physician",
+  "@id": PHYSICIAN_ID,
   name: "Doç. Dr. Erkan Elçi",
   url: "https://drerkanelci.com",
   image: "https://drerkanelci.com/images/dr-erkan-elci.jpg",
@@ -179,28 +182,33 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      <WhatsAppButton />
-      <Analytics />
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-16481808087"
-        strategy="afterInteractive"
-      />
-      <Script id="google-ads-tag" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-16481808087');
-        `}
-      </Script>
-    </NextIntlClientProvider>
+    <html lang={locale}>
+      <body className="antialiased">
+        <GoogleTagManager gtmId="GTM-T3GXV6LJ" />
+        <NextIntlClientProvider messages={messages}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <Analytics />
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=AW-16481808087"
+            strategy="afterInteractive"
+          />
+          <Script id="google-ads-tag" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16481808087');
+            `}
+          </Script>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

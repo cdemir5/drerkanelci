@@ -20,6 +20,37 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Blog
+
+Posts are written with Claude through a claude.ai custom connector (MCP) that
+only saves **drafts**. They are reviewed and published in `/admin`.
+
+- Public pages: `app/[locale]/blog` (list) and `app/[locale]/blog/[slug]` (post).
+- Admin panel: `app/admin` (password login, edit, preview, publish).
+- Claude connector: `app/api/mcp/[token]/route.ts`. Tools are in `lib/mcp/tools.ts`
+  and the writing rules Claude follows are in `lib/blog/guidelines.ts`.
+- Data: Neon Postgres (`lib/blog/queries.ts`, `lib/blog/mutations.ts`). Public reads
+  are cached with the `blog` tag, and publish/unpublish revalidates that tag.
+
+### Setup (once)
+
+1. In Vercel → Storage, create a **Neon Postgres** database and a **Blob** store,
+   then connect both to this project. This adds `DATABASE_URL` and
+   `BLOB_READ_WRITE_TOKEN`.
+2. Add these environment variables:
+
+   | Variable | Value |
+   | --- | --- |
+   | `ADMIN_PASSWORD` | Password for `/admin` |
+   | `ADMIN_SESSION_SECRET` | Random string, 32+ characters |
+   | `MCP_SECRET` | Random string, 32+ characters. It is part of the connector URL, so keep it secret. |
+
+   Generate random values with `openssl rand -hex 32`.
+3. Run `db/schema.sql` once in the Neon SQL Editor. It is safe to re-run.
+4. Redeploy, sign in at `/admin`, open **Claude Bağlayıcısı**, and add the URL shown
+   there in claude.ai → Settings → Connectors → Add custom connector. The URL must
+   not redirect, and Vercel Deployment Protection must not cover it.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

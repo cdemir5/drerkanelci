@@ -1,0 +1,22 @@
+{
+  "blog": {
+    "title": "Blog",
+    "heading": "Women's Health Blog",
+    "description": "Informative articles on gynecology, pregnancy and gynecologic surgery, written and medically reviewed by Assoc. Prof. Dr. Erkan Elçi.",
+    "metaTitle": "Blog - Women's Health Articles",
+    "metaDescription": "Up-to-date articles on fibroids, endometriosis, HPV, pregnancy and gynecologic surgery, medically reviewed by Assoc. Prof. Dr. Erkan Elçi.",
+    "empty": "No articles have been published in this language yet. Coming soon.",
+    "readMore": "Read Article",
+    "readingTime": "{minutes} min read",
+    "publishedOn": "Published: {date}",
+    "updatedOn": "Updated: {date}",
+    "reviewedBy": "Medically reviewed",
+    "author": "Assoc. Prof. Dr. Erkan Elçi",
+    "authorTitle": "Obstetrics & Gynecology Specialist",
+    "aboutAuthor": "About the author",
+    "faq": "Frequently Asked Questions",
+    "disclaimer": "This article is for general information only and does not replace an examination, diagnosis or treatment. Please consult a physician about your symptoms.",
+    "previewBanner": "Preview mode: you are viewing an unpublished draft.",
+    "exitPreview": "Exit preview"
+  }
+}

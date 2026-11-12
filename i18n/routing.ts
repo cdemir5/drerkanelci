@@ -146,6 +146,9 @@ export const routing = defineRouting({
       de: "/vnotes",
       ru: "/vnotes",
     },
+    // Blog (post slugs are stored per language in the database)
+    "/blog": "/blog",
+    "/blog/[slug]": "/blog/[slug]",
   },
 });
 

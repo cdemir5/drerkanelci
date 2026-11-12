@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -49,8 +50,23 @@ const config: Config = {
         "2xl": "1rem",
         "3xl": "1.5rem",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "--tw-prose-links": "#D63384",
+            "--tw-prose-headings": "#1A1A2E",
+            "--tw-prose-bold": "#1A1A2E",
+            "--tw-prose-bullets": "#D63384",
+            a: { fontWeight: "600", textDecoration: "none" },
+            "a:hover": { textDecoration: "underline" },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  // Blog content uses the `article` class. The plugin is renamed from
+  // `prose` so the existing (currently inert) `prose` classes in
+  // DiseasePageLayout keep their current look.
+  plugins: [typography({ className: "article" })],
 };
 export default config;

@@ -67,6 +67,7 @@ export default function Footer() {
                 { labelKey: "roboticSurgery", href: "/robotik-cerrahi" as const },
                 { labelKey: "infertility", href: "/kisirlik-tedavisi" as const },
                 { labelKey: "highRiskPregnancies", href: "/yuksek-riskli-gebelikler" as const },
+                { labelKey: "blog", href: "/blog" as const },
                 { labelKey: "contact", href: "/iletisim" as const },
               ].map((link) => (
                 <li key={link.href}>

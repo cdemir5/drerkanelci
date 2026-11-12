@@ -2,14 +2,53 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/routing";
+import { usePathname as useBrowserPathname } from "next/navigation";
+import { useRouter, usePathname, routing } from "@/i18n/routing";
 import { localeNames, type Locale } from "@/i18n/config";
 import { FiGlobe, FiChevronDown } from "react-icons/fi";
+
+/**
+ * next-intl's usePathname() returns the route template (e.g. "/blog/[slug]"
+ * or "/miyom/[subSlug]") on dynamic routes, and navigating to a template
+ * without params throws. Read the param values from the real URL by
+ * position against the current locale's localized template.
+ */
+function extractParams(
+  template: string,
+  browserPathname: string,
+  locale: Locale
+): Record<string, string> | undefined {
+  if (!template.includes("[")) return undefined;
+
+  const config = (
+    routing.pathnames as Record<string, string | Record<string, string>>
+  )[template];
+  const localized =
+    typeof config === "string" ? config : config?.[locale] ?? template;
+
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const path =
+    prefix && browserPathname.startsWith(`${prefix}/`)
+      ? browserPathname.slice(prefix.length)
+      : browserPathname;
+
+  const templateSegments = localized.split("/");
+  const pathSegments = path.split("/");
+  const params: Record<string, string> = {};
+  templateSegments.forEach((segment, i) => {
+    const match = segment.match(/^\[(.+)\]$/);
+    if (match && pathSegments[i]) {
+      params[match[1]] = decodeURIComponent(pathSegments[i]);
+    }
+  });
+  return params;
+}
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const locale = useLocale() as Locale;
   const pathname = usePathname();
+  const browserPathname = useBrowserPathname();
   const router = useRouter();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -25,7 +64,13 @@ export default function LanguageSwitcher() {
 
   function switchLocale(newLocale: Locale) {
     setIsOpen(false);
-    router.replace(pathname as any, { locale: newLocale });
+    const params = extractParams(pathname, browserPathname, locale);
+    // Blog posts: the slug differs per language; the post page redirects
+    // /{newLocale}/blog/<old-slug> to the right translation (or the list).
+    router.replace(
+      (params ? { pathname, params } : pathname) as any,
+      { locale: newLocale }
+    );
   }
 
   return (

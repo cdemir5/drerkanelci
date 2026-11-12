@@ -100,6 +100,8 @@ export const navigation: NavItem[] = [
     labelKey: "more",
     href: "#",
     children: [
+      // Kept inside "More": the desktop menu has no room for another top-level item.
+      { labelKey: "blog", href: "/blog" },
       { labelKey: "hysteroscopy", href: "/histeroskopik-cerrahi" },
       { labelKey: "pregnancyBirth", href: "/gebelik-dogum" },
       { labelKey: "infertility", href: "/kisirlik-tedavisi" },

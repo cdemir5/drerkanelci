@@ -1,0 +1,22 @@
+{
+  "blog": {
+    "title": "Blog",
+    "heading": "Kadın Sağlığı Blogu",
+    "description": "Kadın hastalıkları, gebelik ve jinekolojik cerrahi hakkında Doç. Dr. Erkan Elçi tarafından hazırlanan ve incelenen bilgilendirici yazılar.",
+    "metaTitle": "Blog - Kadın Sağlığı Yazıları",
+    "metaDescription": "Miyom, endometriozis, HPV, gebelik ve jinekolojik cerrahi hakkında Doç. Dr. Erkan Elçi tarafından incelenen güncel ve bilgilendirici yazılar.",
+    "empty": "Bu dilde henüz yazı yayınlanmadı. Yakında burada olacak.",
+    "readMore": "Yazıyı Oku",
+    "readingTime": "{minutes} dk okuma",
+    "publishedOn": "Yayınlanma: {date}",
+    "updatedOn": "Güncellenme: {date}",
+    "reviewedBy": "Tıbbi inceleme",
+    "author": "Doç. Dr. Erkan Elçi",
+    "authorTitle": "Kadın Hastalıkları ve Doğum Uzmanı",
+    "aboutAuthor": "Yazar hakkında",
+    "faq": "Sık Sorulan Sorular",
+    "disclaimer": "Bu yazı genel bilgilendirme amaçlıdır ve muayene, tanı ya da tedavinin yerini tutmaz. Şikâyetleriniz için mutlaka bir hekime başvurunuz.",
+    "previewBanner": "Önizleme modu: Yayınlanmamış taslağı görüyorsunuz.",
+    "exitPreview": "Önizlemeden çık"
+  }
+}

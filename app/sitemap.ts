@@ -2,8 +2,15 @@ import { MetadataRoute } from "next";
 import { locales, defaultLocale, type Locale } from "@/i18n/config";
 import { routing } from "@/i18n/routing";
 import { slugMap, categorySubPages } from "@/i18n/slugs";
+import { getPublishedPosts, getSitemapPosts } from "@/lib/blog/queries";
+import { SITE_URL, blogPath } from "@/lib/site";
 
-const baseUrl = "https://drerkanelci.com";
+// Rendered per request: Next 14 does not apply revalidateTag to cached route
+// handlers, only to pages. The blog queries are still served from the data
+// cache (tag "blog"), so this stays cheap and is fresh right after a publish.
+export const dynamic = "force-dynamic";
+
+const baseUrl = SITE_URL;
 
 // Category parent paths (TR key → routing pathname key)
 const categoryPaths: Record<string, string> = {
@@ -37,7 +44,49 @@ function buildAlternates(
   return alternates;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+async function blogEntries(): Promise<MetadataRoute.Sitemap> {
+  const entries: MetadataRoute.Sitemap = [];
+
+  // Blog list: Turkish always, other languages once they have posts.
+  const listLanguages: Record<string, string> = {};
+  for (const locale of locales) {
+    if (locale === defaultLocale || (await getPublishedPosts(locale)).length > 0) {
+      listLanguages[locale] = `${baseUrl}${blogPath(locale)}`;
+    }
+  }
+  entries.push({
+    url: `${baseUrl}${blogPath(defaultLocale)}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+    alternates: { languages: listLanguages },
+  });
+
+  // Posts: one entry per published language version, with its siblings.
+  const posts = await getSitemapPosts();
+  const byPost = new Map<string, typeof posts>();
+  for (const post of posts) {
+    byPost.set(post.postId, [...(byPost.get(post.postId) ?? []), post]);
+  }
+  for (const versions of Array.from(byPost.values())) {
+    const languages = Object.fromEntries(
+      versions.map((v) => [v.locale, `${baseUrl}${blogPath(v.locale, v.slug)}`])
+    );
+    for (const version of versions) {
+      entries.push({
+        url: `${baseUrl}${blogPath(version.locale, version.slug)}`,
+        lastModified: new Date(version.lastModified),
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: { languages },
+      });
+    }
+  }
+
+  return entries;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   // Standalone pages (no sub-slugs)
@@ -119,6 +168,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
   }
+
+  entries.push(...(await blogEntries()));
 
   return entries;
 }
