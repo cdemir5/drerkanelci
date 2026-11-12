@@ -1,12 +1,25 @@
+import { headers } from "next/headers";
 import { requireAdmin } from "@/lib/admin/session";
-import { SITE_URL } from "@/lib/site";
 import CopyButton from "./CopyButton";
+
+/**
+ * The origin this panel is actually served from (e.g. https://www.drerkanelci.com).
+ * claude.ai does not follow redirects, so the connector URL must use the final
+ * host, not a domain that redirects (drerkanelci.com → www).
+ */
+async function requestOrigin(): Promise<string> {
+  const h = await headers();
+  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "www.drerkanelci.com";
+  const proto =
+    h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
+  return `${proto}://${host}`;
+}
 
 export default async function ConnectorPage() {
   await requireAdmin();
   const secret = process.env.MCP_SECRET;
   const configured = Boolean(secret && secret.length >= 32);
-  const url = configured ? `${SITE_URL}/api/mcp/${secret}` : "";
+  const url = configured ? `${await requestOrigin()}/api/mcp/${secret}` : "";
 
   return (
     <div className="max-w-3xl space-y-6">

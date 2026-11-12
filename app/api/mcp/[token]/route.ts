@@ -19,7 +19,8 @@ function sameSecret(candidate: string, secret: string): boolean {
 }
 
 /**
- * The connector URL is https://drerkanelci.com/api/mcp/<MCP_SECRET>.
+ * The connector URL is https://www.drerkanelci.com/api/mcp/<MCP_SECRET>
+ * (with www: claude.ai does not follow the apex → www redirect).
  * Tools can only create/update drafts, so a secret URL is enough here.
  * Wrong token → 404 (never 401: a 401 makes claude.ai start OAuth discovery).
  */

@@ -1,6 +1,8 @@
 import { defaultLocale } from "@/i18n/config";
 
-export const SITE_URL = "https://drerkanelci.com";
+// Primary domain on Vercel; drerkanelci.com (no www) redirects here.
+// Canonical URLs, the sitemap and JSON-LD must use this exact host.
+export const SITE_URL = "https://www.drerkanelci.com";
 
 /** Schema.org id of the Physician entity declared in app/[locale]/layout.tsx */
 export const PHYSICIAN_ID = `${SITE_URL}/#physician`;

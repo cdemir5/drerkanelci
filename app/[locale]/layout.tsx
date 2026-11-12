@@ -10,7 +10,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
-import { PHYSICIAN_ID } from "@/lib/site";
+import { PHYSICIAN_ID, SITE_URL } from "@/lib/site";
 
 type Props = {
   children: React.ReactNode;
@@ -63,7 +63,7 @@ export async function generateMetadata({
   };
 
   return {
-    metadataBase: new URL("https://drerkanelci.com"),
+    metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: "/",
       languages: {
@@ -96,7 +96,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: ogLocales[locale] || "tr_TR",
-      url: "https://drerkanelci.com",
+      url: SITE_URL,
       siteName: "Doç. Dr. Erkan Elçi",
       title:
         titles[locale]?.default || titles.tr.default,
@@ -128,8 +128,8 @@ const jsonLd = {
   "@type": "Physician",
   "@id": PHYSICIAN_ID,
   name: "Doç. Dr. Erkan Elçi",
-  url: "https://drerkanelci.com",
-  image: "https://drerkanelci.com/images/dr-erkan-elci.jpg",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/dr-erkan-elci.jpg`,
   telephone: "+90 530 403 69 77",
   email: "info@drerkanelci.com",
   description:
